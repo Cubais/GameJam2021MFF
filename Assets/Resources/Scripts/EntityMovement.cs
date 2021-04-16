@@ -13,8 +13,9 @@ public class EntityMovement : MonoBehaviour
     [SerializeField]
     private Transform m_feetTransform;
 
-    private float m_vertical;
-    private float m_horizontal;
+    private Vector3 m_moveDirection = Vector3.zero;
+
+    private bool m_inWater = false;
     
     // Start is called before the first frame update
     void Start()
@@ -32,16 +33,29 @@ public class EntityMovement : MonoBehaviour
             Debug.Log(tileType.name);
 		}
 
-        m_vertical = Input.GetAxisRaw("Vertical");
-        m_horizontal = Input.GetAxisRaw("Horizontal");
-
-        
+        SetInWater();
     }
 
 	private void FixedUpdate()
 	{
-        Vector3 move = new Vector3(m_horizontal, m_vertical, 0);
+        m_rigidbody.AddForce(m_moveDirection * Speed);
+    }
 
-        m_rigidbody.MovePosition(transform.position + move * Time.fixedDeltaTime * Speed);
+    public void SetMoveDirection(Vector3 direction)
+	{
+        m_moveDirection = direction.normalized;
+	}
+
+    public bool GetInWater()
+	{
+        return m_inWater;
+	}
+
+    private void SetInWater()
+	{
+        var tile = m_level.GetTileAtPos(m_feetTransform.position);
+        m_inWater = !(tile == null || tile.name != "WaterTile");
+
+        m_rigidbody.gravityScale = (m_inWater) ? 0 : 1;
     }
 }

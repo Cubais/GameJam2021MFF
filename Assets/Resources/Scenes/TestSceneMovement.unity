@@ -241,6 +241,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &683369645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 12331830060347027, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
+  m_PrefabInstance: {fileID: 12331828415682150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &683369653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683369645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9cad25155f1e3489dd19c54a49f5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BounceDamp: 0.05
 --- !u!1001 &1141136749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -489,6 +507,10 @@ PrefabInstance:
     - target: {fileID: 12331830060347027, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432310697651444674, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
+      propertyPath: Speed
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5384687544936872581, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
       propertyPath: projectilesParent

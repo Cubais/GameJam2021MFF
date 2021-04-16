@@ -18,6 +18,6 @@ public class PlayerInput : MonoBehaviour
         var vertical = Input.GetAxisRaw("Vertical");
         var horizontal = Input.GetAxisRaw("Horizontal");
 
-        //entity.SetMoveDirection(new Vector3(horizontal, vertical, 0));
+        entity.SetMoveDirection(new Vector3(horizontal, vertical, 0));
     }
 }
