@@ -47,3 +47,4 @@ MonoBehaviour:
   curHpPanel: {fileID: 0}
   curHpText: {fileID: 0}
   LostHpParticles: {fileID: 0}
+  gameOverPanel: {fileID: 0}
