@@ -23,7 +23,7 @@ public class LevelInfo : MonoBehaviour
 
 	public TileBase GetTileAtPos(Vector3 position)
 	{
-		Vector3Int posInt = new Vector3Int(Mathf.RoundToInt(position.x), Mathf.RoundToInt(position.y), Mathf.RoundToInt(position.z));
+		Vector3Int posInt = new Vector3Int(Mathf.FloorToInt(position.x), Mathf.FloorToInt(position.y), Mathf.RoundToInt(position.z));
 		return levelTiles.GetTile(posInt);
 	}
 }

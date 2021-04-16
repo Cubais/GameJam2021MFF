@@ -11,9 +11,6 @@ public class EntityMovement : MonoBehaviour
     private Rigidbody2D m_rigidbody;
     private WaterFloating m_waterFloating;
 
-    [SerializeField]
-    private Transform m_feetTransform;
-
     private Vector3 m_moveDirection = Vector3.zero;
 
     private bool m_inWater = false;
@@ -31,7 +28,7 @@ public class EntityMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
 		{
-            var tileType = m_level.GetTileAtPos(m_feetTransform.position);
+            var tileType = m_level.GetTileAtPos(transform.position);
             Debug.Log(tileType.name);
 		}
 
@@ -58,9 +55,7 @@ public class EntityMovement : MonoBehaviour
 
     private void SetInWater()
 	{
-        var tile = m_level.GetTileAtPos(m_feetTransform.position);
+        var tile = m_level.GetTileAtPos(transform.position);
         m_inWater = !(tile == null || tile.name != "WaterTile");
-
-        m_rigidbody.gravityScale = (m_inWater) ? 0 : 1;
     }
 }

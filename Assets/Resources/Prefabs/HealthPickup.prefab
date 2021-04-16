@@ -92,13 +92,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2541749634838626747}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c9cad25155f1e3489dd19c54a49f5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BounceDamp: 0.05
   positionCheck: {fileID: 2541749634838626745}
+  DebugCheck: 1
 --- !u!58 &1539808357
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -128,9 +129,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 0.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
