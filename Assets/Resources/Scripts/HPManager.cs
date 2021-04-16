@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,19 +6,26 @@ using UnityEngine.UI;
 
 public class HPManager : MonoBehaviour, IResettable
 {
+    public static HPManager instance;
+
     public int curHp = 50;
     public RectTransform curHpPanel;
     public Text curHpText;
     public ParticleSystem LostHpParticles;
     public GameObject gameOverPanel;
 
+    public event Action LevelUP;
+
     private int hpMax = 100;
     private bool dead = false;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        if (!instance)
+            instance = this;
+        else
+            Debug.LogError("HP MANAGER ALREADY SET!");        
     }
 
     // Update is called once per frame
@@ -59,7 +67,14 @@ public class HPManager : MonoBehaviour, IResettable
 
         if (curHp >= hpMax)
         {
-            LevelUp();
+            if (LevelUP != null)
+			{
+                LevelUP();
+			}
+            else
+			{
+                Debug.LogError("NO LEVEL UP HANDLING!");
+			}
         }
 
         if (amount < 0)
@@ -88,10 +103,5 @@ public class HPManager : MonoBehaviour, IResettable
         dead = true;
         gameOverPanel.SetActive(true);
         Time.timeScale = 0;
-    }
-
-    private void LevelUp()
-    {
-        //TODO
     }
 }
