@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 683369646}
   m_Layer: 7
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,21 +204,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 12331830060347025}
     m_Modifications:
+    - target: {fileID: 742122700223730804, guid: 202dc5b57a66bc6418db966c2e595e75, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 742122700223730804, guid: 202dc5b57a66bc6418db966c2e595e75, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 742122700223730806, guid: 202dc5b57a66bc6418db966c2e595e75, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 742122700223730806, guid: 202dc5b57a66bc6418db966c2e595e75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 725.9145
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 742122700223730806, guid: 202dc5b57a66bc6418db966c2e595e75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 292.72342
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 742122700223730806, guid: 202dc5b57a66bc6418db966c2e595e75, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -68.41611
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 742122700223730806, guid: 202dc5b57a66bc6418db966c2e595e75, type: 3}
       propertyPath: m_LocalRotation.w

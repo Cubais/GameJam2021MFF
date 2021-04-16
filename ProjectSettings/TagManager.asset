@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pickup
+  - MeleeEnemy
+  - EnemyBullet
+  - FriendlyBullet
   layers:
   - Default
   - TransparentFX

@@ -6,15 +6,20 @@ public class ToiletPaper : MonoBehaviour
 {
     public float speed = 10;
     public int hp = 2;
+    public float pickupInitialSpeed = 1;
 
     private Transform playerTransform;
-    private EntityMovement em;
+    private Transform healthPickupParentTransform;
+    private GameObject hpPickupPrefab;
+    private EntityMovement entityMovement;
 
     // Start is called before the first frame update
     void Start()
     {
         playerTransform = GameObject.Find("Character").GetComponent<Transform>();
-        em = GetComponent<EntityMovement>();
+        healthPickupParentTransform = GameObject.Find("HealthPickupsParent").GetComponent<Transform>();
+        hpPickupPrefab = Resources.Load<GameObject>("Prefabs/HealthPickup");
+        entityMovement = GetComponent<EntityMovement>();
     }
 
     // Update is called once per frame
@@ -23,12 +28,12 @@ public class ToiletPaper : MonoBehaviour
         Vector3 dir3 = playerTransform.position - transform.position;
         Vector2 dir = new Vector2(dir3.x, dir3.y).normalized;
 
-        em.SetMoveDirection(dir);
+        entityMovement.SetMoveDirection(dir);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 8) // projectile collision
+        if (collision.gameObject.CompareTag("FriendlyBullet")) // player projectile collision
         {
             DecreaseHp();
             Destroy(collision.gameObject);
@@ -45,6 +50,15 @@ public class ToiletPaper : MonoBehaviour
 
     private void Die()
     {
+        int pickupsToSpawn = (int) (Random.value * 3) + 1;
+
+        for (int i = 0; i < pickupsToSpawn; i++)
+        {
+            GameObject pickupGo = Instantiate(hpPickupPrefab, transform.position, Quaternion.identity, healthPickupParentTransform);
+            var pickupRb = pickupGo.GetComponent<Rigidbody2D>();
+            pickupRb.AddForce(new Vector2(Random.value * pickupInitialSpeed, Random.value * pickupInitialSpeed));
+        }
+
         Destroy(gameObject);
     }
 }
