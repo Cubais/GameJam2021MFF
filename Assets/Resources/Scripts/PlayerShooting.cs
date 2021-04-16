@@ -22,7 +22,11 @@ public class PlayerShooting : MonoBehaviour
             Vector3 dir3 = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             Vector2 dir = new Vector2(dir3.x, dir3.y).normalized;
 
-            GameObject newProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity, projectilesParent);
+            GameObject newProjectile = Instantiate(
+                projectilePrefab,
+                new Vector3(transform.position.x + dir.x / 20, transform.position.y + dir.y / 20, transform.position.z),
+                Quaternion.identity, projectilesParent
+            );
             var newProjectileRB = newProjectile.GetComponent<Rigidbody2D>();
             newProjectileRB.AddForce(dir * forceMultiplier);
         }
