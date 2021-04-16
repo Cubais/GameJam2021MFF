@@ -2224,7 +2224,7 @@ GameObject:
   - component: {fileID: 8310330287299961928}
   - component: {fileID: 3128131098349264901}
   - component: {fileID: 6753620943962725612}
-  - component: {fileID: 833955180}
+  - component: {fileID: 8306906486509946362}
   m_Layer: 6
   m_Name: TIleWalls
   m_TagString: Untagged
@@ -2848,7 +2848,7 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!19719996 &833955180
+--- !u!19719996 &8306906486509946362
 TilemapCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
