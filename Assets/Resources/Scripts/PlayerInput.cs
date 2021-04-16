@@ -18,6 +18,10 @@ public class PlayerInput : MonoBehaviour
         var vertical = Input.GetAxisRaw("Vertical");
         var horizontal = Input.GetAxisRaw("Horizontal");
 
+        // Cannot go Up if not in the water
+        if (!entity.InWater())
+            vertical = Mathf.Clamp(vertical, -1.0f, 0f);
+
         entity.SetMoveDirection(new Vector3(horizontal, vertical, 0));
     }
 }

@@ -8,6 +8,7 @@ public class WaterFloating : MonoBehaviour
     public Transform positionCheck;
 
     private Rigidbody2D m_rigidbody2D;
+    private bool m_applyWaterForce = true;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +20,16 @@ public class WaterFloating : MonoBehaviour
     void FixedUpdate()
     {
         var tile = LevelInfo.instance.GetTileAtPos(positionCheck.position);
-        if (tile != null && tile.name == "WaterTile")
+        if (tile != null && tile.name == "WaterTile" && m_applyWaterForce)
         {
             var upForce = -Physics.gravity * (1f - m_rigidbody2D.velocity.y * BounceDamp);
             Debug.Log(upForce);
             m_rigidbody2D.AddForce(upForce);
         }
     }
+
+    public void SetApplyWaterForce(bool applyForce)
+	{
+        m_applyWaterForce = applyForce;
+	}
 }

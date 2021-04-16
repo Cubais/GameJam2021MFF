@@ -9,6 +9,7 @@ public class EntityMovement : MonoBehaviour
 
     private LevelInfo m_level;
     private Rigidbody2D m_rigidbody;
+    private WaterFloating m_waterFloating;
 
     [SerializeField]
     private Transform m_feetTransform;
@@ -22,6 +23,7 @@ public class EntityMovement : MonoBehaviour
     {
         m_level = LevelInfo.instance;
         m_rigidbody = GetComponent<Rigidbody2D>();
+        m_waterFloating = GetComponent<WaterFloating>();
     }
 
     // Update is called once per frame
@@ -44,9 +46,12 @@ public class EntityMovement : MonoBehaviour
     public void SetMoveDirection(Vector3 direction)
 	{
         m_moveDirection = direction.normalized;
+
+        // Not applying force when going up or down
+        m_waterFloating.SetApplyWaterForce(m_moveDirection.y == 0f);
 	}
 
-    public bool GetInWater()
+    public bool InWater()
 	{
         return m_inWater;
 	}
