@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3432310697651444674}
   - component: {fileID: 259912038}
   - component: {fileID: 179470638634533322}
+  - component: {fileID: 5384687544936872581}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -102,7 +103,7 @@ Rigidbody2D:
   m_Mass: 1.5
   m_LinearDrag: 3
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -120,10 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6502b4a1241734143868c7cba51c2fde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementForce: 25
+  Speed: 1
   m_feetTransform: {fileID: 2935379767920166741}
-  m_waterLevel: 2
-  m_bounceDamp: 0.3
 --- !u!114 &259912038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +151,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &5384687544936872581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12331830060347027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfe7018f8b2170499d0926ebe0cf9c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceMultiplier: 1000
+  projectilePrefab: {fileID: 2778898360772688946, guid: e33b7b903681b4c4ea3030bfdebdf994, type: 3}
+  projectilesParent: {fileID: 0}
 --- !u!1 &7911388117083985006
 GameObject:
   m_ObjectHideFlags: 0

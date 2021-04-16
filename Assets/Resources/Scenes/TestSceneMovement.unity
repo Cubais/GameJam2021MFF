@@ -267,7 +267,7 @@ PrefabInstance:
     - target: {fileID: 4567405139539468653, guid: aaf724793816e914f90f320c6add8fc1, type: 3}
       propertyPath: LostHpParticles
       value: 
-      objectReference: {fileID: 1145573208}
+      objectReference: {fileID: 0}
     - target: {fileID: 4567405139539468654, guid: aaf724793816e914f90f320c6add8fc1, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -314,11 +314,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaf724793816e914f90f320c6add8fc1, type: 3}
---- !u!198 &1145573208 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 749641608625589573, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
-  m_PrefabInstance: {fileID: 12331828415682150}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1147939821 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 204879533, guid: b3edc34ff37cb4e4480fc1df1144c28d, type: 3}
@@ -447,14 +442,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 169244543, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
-      propertyPath: projectilesParent
-      value: 
-      objectReference: {fileID: 249630402}
-    - target: {fileID: 1644738806, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 12331830060347025, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -503,6 +490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 5384687544936872581, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
+      propertyPath: projectilesParent
+      value: 
+      objectReference: {fileID: 249630402}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
 --- !u!1001 &1733412379424933004
