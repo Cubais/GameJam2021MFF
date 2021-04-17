@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: sceneObject
       value: 
       objectReference: {fileID: 2573683591554636132}
+    - target: {fileID: 1219864538, guid: b3edc34ff37cb4e4480fc1df1144c28d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2990896646939649400, guid: b3edc34ff37cb4e4480fc1df1144c28d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -526,6 +530,10 @@ PrefabInstance:
     - target: {fileID: 7024800208143554871, guid: 359dafd315b380440af2786a7ac7ef7e, type: 3}
       propertyPath: m_Name
       value: TutorialEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7024800208143554871, guid: 359dafd315b380440af2786a7ac7ef7e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 359dafd315b380440af2786a7ac7ef7e, type: 3}

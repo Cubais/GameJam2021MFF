@@ -51,26 +51,28 @@ public class WaterFloating : MonoBehaviour
             if (tileBottom == null || !tileBottom.Equals(WaterTile))
             {
                 offWaterCount++;
-                gravityValue = (offWaterCount > 5f) ? 3 : GravityScale;
+                gravityValue = (offWaterCount > 5f) ? 2 : GravityScale;
             }
             else
                 offWaterCount = 0;
         }
 
-
-        if (tileCenter != null && tileCenter.Equals(WaterTile) && m_applyWaterForce)
+        if (tileCenter != null && tileCenter.Equals(WaterTile))
         {
             m_inWater = true;
 
             if (TurnOffGravity)
             {
-                m_rigidbody2D.gravityScale = 0;                
+                m_rigidbody2D.gravityScale = 0;
             }
 
-            var upForce = -Physics.gravity * (1f - m_rigidbody2D.velocity.y * BounceDamp);
-            m_rigidbody2D.AddForce(upForce);
+            if (m_applyWaterForce)
+            {
+                var upForce = -Physics.gravity * (1f - m_rigidbody2D.velocity.y * BounceDamp);
+                m_rigidbody2D.AddForce(upForce);
 
-            if (DebugInfo) Debug.Log(gameObject.name + " " + upForce);
+                if (DebugInfo) Debug.Log(gameObject.name + " " + upForce);
+            }        
         }
         else if (tileCenter != null && !tileCenter.Equals(WaterTile))
         {
