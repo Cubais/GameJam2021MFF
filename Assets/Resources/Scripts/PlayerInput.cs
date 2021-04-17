@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    public float hookSpeed = 1;
-    public float hookDistance = 10;
+    public float level1HookSpeed = 5;
+    public float level2HookSpeed = 8;
     public GameObject grapplingHook;
     public Transform grapplingHookParent;
 
@@ -43,7 +43,7 @@ public class PlayerInput : MonoBehaviour
         m_entity.SetMoveDirection(new Vector3(horizontal, vertical, 0), true);
 
         // Grappling hook
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1) && PlayerLevel >= 1)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3 dir3 = mousePosition - transform.position;
@@ -57,6 +57,14 @@ public class PlayerInput : MonoBehaviour
             GameObject hook = Instantiate(grapplingHook, transform.position + (Vector3)dir * 0.3f, Quaternion.identity, grapplingHookParent);
             m_lastHook = hook.GetComponent<GrapplingHook>();
             m_lastHook.SetMoveDirection(dir);
+            if (PlayerLevel == 1)
+            {
+                m_lastHook.SetHookSpeed(level1HookSpeed);
+            }
+            else if (PlayerLevel >= 2)
+            {
+                m_lastHook.SetHookSpeed(level2HookSpeed);
+            }
         }
 
         // If a movement key is pressed, delete latched hook

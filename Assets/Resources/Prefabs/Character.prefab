@@ -139,8 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b23a92e00c3e53849a3a855784e1c127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hookSpeed: 0
-  hookDistance: 10
+  level1HookSpeed: 5
+  level2HookSpeed: 8
   grapplingHook: {fileID: 7689171852086783054, guid: 25d7d096d9a964644a07cb9e9a5b8352, type: 3}
   grapplingHookParent: {fileID: 0}
 --- !u!58 &179470638634533322
@@ -171,7 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dfe7018f8b2170499d0926ebe0cf9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceMultiplier: 1000
+  forceMultiplier: 700
+  level2ForceMultiplier: 1100
   projectilePrefab: {fileID: 2778898360772688946, guid: e33b7b903681b4c4ea3030bfdebdf994, type: 3}
   projectilesParent: {fileID: 0}
   projectilePosition: {fileID: 2625465782529292424}

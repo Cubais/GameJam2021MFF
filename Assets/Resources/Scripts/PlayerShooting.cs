@@ -5,17 +5,15 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
     public float forceMultiplier;
+    public float level2ForceMultiplier;
     public GameObject projectilePrefab;
     public Transform projectilesParent;
     public Transform projectilePosition;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        GetComponent<PlayerHealth>().levelUpEvent += LevelUpEvent;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -30,6 +28,14 @@ public class PlayerShooting : MonoBehaviour
             );
             var newProjectileRB = newProjectile.GetComponent<Rigidbody2D>();
             newProjectileRB.AddForce(dir * forceMultiplier);
+        }
+    }
+
+    public void LevelUpEvent(int level)
+    {
+        if (level == 2)
+        {
+            forceMultiplier = level2ForceMultiplier;
         }
     }
 }

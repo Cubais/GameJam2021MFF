@@ -44,7 +44,8 @@ public class Tutorial : MonoBehaviour
     public void LevelUpEvent(int level)
     {
         if (level == 1) 
-        { 
+        {
+            gameObject.SetActive(false);
             grapplingTutorial.SetActive(true);
         }
     }

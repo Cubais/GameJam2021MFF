@@ -85,4 +85,9 @@ public class GrapplingHook : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void SetHookSpeed(float speed)
+    {
+        hookSpeed = speed;
+    }
 }
