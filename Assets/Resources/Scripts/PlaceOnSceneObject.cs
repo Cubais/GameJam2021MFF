@@ -19,6 +19,7 @@ public class PlaceOnSceneObject : MonoBehaviour
         if (sceneObject == null)
         {
             Destroy(gameObject);
+            return;
         }
 
         Vector3 canvasLocation = Camera.main.WorldToScreenPoint(sceneObject.position);
