@@ -185,6 +185,8 @@ MonoBehaviour:
   positionCheck: {fileID: 12331830060347025}
   DebugInfo: 0
   TurnOffGravity: 1
+  GravityScale: 0.3
+  GravitySwitchTimeSpan: 0.7
 --- !u!114 &683369646
 MonoBehaviour:
   m_ObjectHideFlags: 0

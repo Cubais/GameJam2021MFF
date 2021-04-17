@@ -279,15 +279,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4567405139539468654, guid: aaf724793816e914f90f320c6add8fc1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 537.85376
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4567405139539468654, guid: aaf724793816e914f90f320c6add8fc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 325.03693
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4567405139539468654, guid: aaf724793816e914f90f320c6add8fc1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -134.84465
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4567405139539468654, guid: aaf724793816e914f90f320c6add8fc1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -960,6 +960,10 @@ PrefabInstance:
     - target: {fileID: 1034514888292912902, guid: e88003895472d4647b46e860f7dbf948, type: 3}
       propertyPath: m_Name
       value: ToiletBrush
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034514888292912902, guid: e88003895472d4647b46e860f7dbf948, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e88003895472d4647b46e860f7dbf948, type: 3}
