@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5384687544936872581}
   - component: {fileID: 683369653}
   - component: {fileID: 683369646}
+  - component: {fileID: 1534281334}
   m_Layer: 7
   m_Name: Character
   m_TagString: Player
@@ -182,7 +183,6 @@ MonoBehaviour:
   WaterTile: {fileID: 11400000, guid: 675dd9309ea4008498a219dd43cb4411, type: 2}
   BounceDamp: 0.05
   positionCheck: {fileID: 12331830060347025}
-  DebugCheck: 0
   TurnOffGravity: 1
 --- !u!114 &683369646
 MonoBehaviour:
@@ -198,6 +198,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupPrefab: {fileID: 2541749634838626747, guid: 9c4f52dafaebd8e4fbba63c354db574a, type: 3}
   pickupParent: {fileID: 0}
+--- !u!114 &1534281334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12331830060347027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 430d5c977a26eae469a26a19bcf57aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 100
+  LostParticles: {fileID: 5312593024849091088}
 --- !u!1001 &4897263945264385636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -205,6 +219,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 12331830060347025}
     m_Modifications:
+    - target: {fileID: 742122700223730804, guid: 202dc5b57a66bc6418db966c2e595e75, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 742122700223730804, guid: 202dc5b57a66bc6418db966c2e595e75, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 742122700223730804, guid: 202dc5b57a66bc6418db966c2e595e75, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 3
@@ -266,5 +288,10 @@ PrefabInstance:
 --- !u!4 &5312593024849091090 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 742122700223730806, guid: 202dc5b57a66bc6418db966c2e595e75, type: 3}
+  m_PrefabInstance: {fileID: 4897263945264385636}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5312593024849091088 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 742122700223730804, guid: 202dc5b57a66bc6418db966c2e595e75, type: 3}
   m_PrefabInstance: {fileID: 4897263945264385636}
   m_PrefabAsset: {fileID: 0}

@@ -7,12 +7,11 @@ public class PlayerPicking : MonoBehaviour
 	public GameObject pickupPrefab;
 	public Transform pickupParent;
 
-    private HPManager m_HPManager;
+    private PlayerHealth m_PlayerHealth;
 
 	private void Start()
 	{
-		m_HPManager = HPManager.instance;
-		m_HPManager.LevelUP += LevelUp;
+		m_PlayerHealth = GetComponent<PlayerHealth>();
 	}
 
 	private void Update()
@@ -28,12 +27,7 @@ public class PlayerPicking : MonoBehaviour
 		if (collision.gameObject.CompareTag("Pickup"))
 		{
 			Destroy(collision.gameObject);
-			m_HPManager.ChangeHp(10);
+			m_PlayerHealth.ChangeHp(10);
 		}
-	}
-
-	private void LevelUp()
-	{
-		m_HPManager.ResetHp();
 	}
 }

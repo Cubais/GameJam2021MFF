@@ -14,10 +14,7 @@ public class HPManager : MonoBehaviour, IResettable
     public ParticleSystem LostHpParticles;
     public GameObject gameOverPanel;
 
-    public event Action LevelUP;
-
-    private const int HP_MAX = 100;
-    private bool dead = false;
+    private int m_maxHP = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -28,69 +25,25 @@ public class HPManager : MonoBehaviour, IResettable
             Debug.LogError("HP MANAGER ALREADY SET!");        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (dead && Input.GetKeyDown(KeyCode.Space))
-        {
-            ResetGame();
-        }
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            ChangeHp(-5);
-        }
-    }
-
     public void ResetLevel()
     {
-        LostHpParticles.Clear();
-        dead = false;
+        LostHpParticles.Clear();        
         gameOverPanel.SetActive(false);
         Time.timeScale = 1;
         curHp = 50;
         UpdateVisuals();
     }
 
-    public void ChangeHp(int amount)
+    public void SetMaxHP(int amount)
+	{
+        m_maxHP = amount;
+	}
+
+    public void SetHP(int amount)
     {
-        if (dead) { 
-            return;
-        }
-
-        curHp += amount;
-
-        if (curHp <= 0)
-        {
-            Die();
-        }
-
-        if (curHp >= HP_MAX)
-        {
-            if (LevelUP != null)
-			{
-                LevelUP();
-			}
-            else
-			{
-                Debug.LogError("NO LEVEL UP HANDLING!");
-			}
-        }
-
-        if (amount < 0)
-        {
-            //LostHpParticles.Clear();
-            //LostHpParticles.Play();
-            LostHpParticles.Emit(5);
-        }
-
+        curHp = amount;
         UpdateVisuals();
     }
-
-    public void ResetHp()
-	{
-        curHp = HP_MAX / 2;
-	}
 
     private void ResetGame()
     {
@@ -99,13 +52,14 @@ public class HPManager : MonoBehaviour, IResettable
 
     private void UpdateVisuals()
     {
-        curHpText.text = curHp.ToString();
-        curHpPanel.anchorMax = new Vector2(curHp / (float) HP_MAX, curHpPanel.anchorMax.y);
-    }
+        if (m_maxHP == 0)
+            return;
 
-    private void Die()
-    {
-        dead = true;
+        curHpText.text = curHp.ToString();
+        curHpPanel.anchorMax = new Vector2(curHp / (float) m_maxHP, curHpPanel.anchorMax.y);
+    }
+    public void Die()
+    {        
         gameOverPanel.SetActive(true);
         Time.timeScale = 0;
     }
