@@ -614,6 +614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trapdoors:
   - {fileID: 776105355}
+  rotationSpeed: 0
 --- !u!1 &167320647
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +862,7 @@ MonoBehaviour:
   trapdoors:
   - {fileID: 828067443}
   - {fileID: 5449982}
+  rotationSpeed: 0
 --- !u!1 &250336374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2049,6 +2051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trapdoors:
   - {fileID: 2119548706}
+  rotationSpeed: 0
 --- !u!1 &552231203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,6 +2126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trapdoors:
   - {fileID: 37118110}
+  rotationSpeed: 0
 --- !u!1001 &566526353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3711,6 +3715,7 @@ MonoBehaviour:
   trapdoors:
   - {fileID: 167320647}
   - {fileID: 1126625960}
+  rotationSpeed: 0
 --- !u!1 &1141316766
 GameObject:
   m_ObjectHideFlags: 0
@@ -3788,6 +3793,7 @@ MonoBehaviour:
   trapdoors:
   - {fileID: 54136494}
   - {fileID: 347298657}
+  rotationSpeed: 0
 --- !u!1 &1162528893
 GameObject:
   m_ObjectHideFlags: 0
@@ -5008,6 +5014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trapdoors:
   - {fileID: 1356802378}
+  rotationSpeed: 0
 --- !u!1001 &1495369654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6381,6 +6388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trapdoors:
   - {fileID: 245091248}
+  rotationSpeed: 0
 --- !u!1 &1751782585
 GameObject:
   m_ObjectHideFlags: 0
@@ -7152,6 +7160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trapdoors:
   - {fileID: 307974555}
+  rotationSpeed: 0
 --- !u!1001 &1975963567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7468,6 +7477,7 @@ MonoBehaviour:
   trapdoors:
   - {fileID: 1087604689}
   - {fileID: 1834289162}
+  rotationSpeed: 0
 --- !u!1001 &2009052003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7612,6 +7622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trapdoors:
   - {fileID: 90196558}
+  rotationSpeed: 0
 --- !u!1001 &2024683022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7798,6 +7809,7 @@ MonoBehaviour:
   trapdoors:
   - {fileID: 1889593661}
   - {fileID: 1207494220}
+  rotationSpeed: 0
 --- !u!1 &2034327163
 GameObject:
   m_ObjectHideFlags: 0
@@ -7929,6 +7941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trapdoors:
   - {fileID: 1848089959}
+  rotationSpeed: 0
 --- !u!1 &2053792653 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3883086442061956950, guid: b3edc34ff37cb4e4480fc1df1144c28d, type: 3}
@@ -8228,6 +8241,7 @@ MonoBehaviour:
   trapdoors:
   - {fileID: 181633569}
   - {fileID: 893628509}
+  rotationSpeed: 0
 --- !u!1 &2119548706
 GameObject:
   m_ObjectHideFlags: 0
