@@ -26,6 +26,7 @@ public class WaterFloating : MonoBehaviour
     private bool m_applyWaterForce = true;
     private float m_turnOnTime = 0f;
     private int offWaterCount = 0;
+    private bool m_inWater = true;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +60,9 @@ public class WaterFloating : MonoBehaviour
 
 
         if (tileCenter != null && tileCenter.Equals(WaterTile) && m_applyWaterForce)
-        {            
+        {
+            m_inWater = true;
+
             if (TurnOffGravity)
             {
                 m_rigidbody2D.gravityScale = 0;                
@@ -71,7 +74,8 @@ public class WaterFloating : MonoBehaviour
             if (DebugInfo) Debug.Log(gameObject.name + " " + upForce);
         }
         else if (tileCenter != null && !tileCenter.Equals(WaterTile))
-        {   
+        {
+            m_inWater = false;
             if (TurnOffGravity && (Time.realtimeSinceStartup - m_turnOnTime > GravitySwitchTimeSpan))
 			{
                 m_rigidbody2D.gravityScale = gravityValue;
@@ -83,5 +87,10 @@ public class WaterFloating : MonoBehaviour
     public void SetApplyWaterForce(bool applyForce)
 	{
         m_applyWaterForce = applyForce;
+	}
+
+    public bool InWater()
+	{
+        return m_inWater;
 	}
 }
