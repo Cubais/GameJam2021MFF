@@ -103,6 +103,9 @@ public class PlayerInput : MonoBehaviour
 
     private void HandleAnimations(float horizontal, float vertical)
 	{
+        if (!m_animator)
+            return;
+
         var hor = horizontal;
         if (horizontal == 0f)
 		{
