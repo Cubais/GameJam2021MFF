@@ -151,9 +151,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaterTile: {fileID: 11400000, guid: 675dd9309ea4008498a219dd43cb4411, type: 2}
   BounceDamp: 0.05
-  positionCheck: {fileID: 1034514888292912900}
+  CenterPositionWaterCheck: {fileID: 1034514888292912900}
+  BottomPositionWaterCheck: {fileID: 0}
   DebugInfo: 0
   TurnOffGravity: 1
+  GravityScale: 1
+  GravitySwitchTimeSpan: 0.5
 --- !u!114 &1034514888292912903
 MonoBehaviour:
   m_ObjectHideFlags: 0

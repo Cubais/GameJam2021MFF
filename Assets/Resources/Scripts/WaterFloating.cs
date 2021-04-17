@@ -8,7 +8,8 @@ public class WaterFloating : MonoBehaviour
     public Tile WaterTile;
 
     public float BounceDamp = 0.05f;
-    public Transform positionCheck;
+    public Transform CenterPositionWaterCheck;
+    public Transform BottomPositionWaterCheck;
 
     public bool DebugInfo = false;
 
@@ -24,23 +25,41 @@ public class WaterFloating : MonoBehaviour
     private Rigidbody2D m_rigidbody2D;
     private bool m_applyWaterForce = true;
     private float m_turnOnTime = 0f;
+    private int offWaterCount = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         m_rigidbody2D = GetComponent<Rigidbody2D>();
+        if (CenterPositionWaterCheck == null)
+            CenterPositionWaterCheck = this.transform;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        var tile = LevelInfo.instance.GetTileAtPos(positionCheck.position);
+        var tileCenter = LevelInfo.instance.GetTileAtPos(CenterPositionWaterCheck.position);
+        var gravityValue = GravityScale;
 
         if (DebugInfo) 
-            Debug.Log(tile + " " + WaterTile + " " + tile.Equals(WaterTile));
+            Debug.Log(tileCenter + " " + WaterTile + " " + tileCenter.Equals(WaterTile));
 
-        if (tile != null && tile.Equals(WaterTile) && m_applyWaterForce)
+
+        if (BottomPositionWaterCheck != null)
         {
+            var tileBottom = LevelInfo.instance.GetTileAtPos(BottomPositionWaterCheck.position);
+            if (!tileBottom.Equals(WaterTile))
+            {
+                offWaterCount++;
+                gravityValue = (offWaterCount > 5f) ? 3 : GravityScale;
+            }
+            else
+                offWaterCount = 0;
+        }
+
+
+        if (tileCenter != null && tileCenter.Equals(WaterTile) && m_applyWaterForce)
+        {            
             if (TurnOffGravity)
             {
                 m_rigidbody2D.gravityScale = 0;                
@@ -51,15 +70,14 @@ public class WaterFloating : MonoBehaviour
 
             if (DebugInfo) Debug.Log(gameObject.name + " " + upForce);
         }
-        else if (tile != null && !tile.Equals(WaterTile))
-        {            
+        else if (tileCenter != null && !tileCenter.Equals(WaterTile))
+        {   
             if (TurnOffGravity && (Time.realtimeSinceStartup - m_turnOnTime > GravitySwitchTimeSpan))
 			{
-                m_rigidbody2D.gravityScale = GravityScale;
+                m_rigidbody2D.gravityScale = gravityValue;
                 m_turnOnTime = Time.realtimeSinceStartup;
             }   
-        }
-        
+        }        
     }
 
     public void SetApplyWaterForce(bool applyForce)
