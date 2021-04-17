@@ -25,7 +25,9 @@ public class DeleteAfterTimePassed : MonoBehaviour
         m_timePassed += Time.unscaledDeltaTime;
         if (m_timePassed >= secondsToPass || m_outsideWater)
         {
-            m_bubbles.Stop();
+            if (m_bubbles)
+                m_bubbles.Stop();
+
             m_spriteRenderer.enabled = false;
             Destroy(gameObject, 5);
         }

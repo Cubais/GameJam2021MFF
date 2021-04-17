@@ -18,4 +18,22 @@ public class EnemyProjectile : MonoBehaviour
     {
         movementDirection = dir;
     }
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("MeleeEnemy"))
+		{
+            Debug.LogWarning("DEstroy " + collision.gameObject.tag);
+            Destroy(gameObject);
+        }
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("MeleeEnemy"))
+        {
+            Debug.LogWarning("DEstroy " + collision.gameObject.tag);
+            Destroy(gameObject);
+        }
+    }
 }

@@ -7,6 +7,7 @@ public class ToiletBrush : MonoBehaviour
     public int hp = 2;
     public float pickupInitialSpeed = 1;
     public float shootingFrequencySeconds = 5;
+    public Transform ProjectileTransform;
 
     private Transform playerTransform;
     private Transform healthPickupParentTransform;
@@ -42,7 +43,7 @@ public class ToiletBrush : MonoBehaviour
         timePassed += Time.deltaTime;
         if (timePassed >= shootingFrequencySeconds)
         {
-            GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity, projectilesParent);
+            GameObject projectile = Instantiate(projectilePrefab, ProjectileTransform.position, Quaternion.identity, projectilesParent);
             var projectileScript = projectile.GetComponent<EnemyProjectile>();
             projectileScript.SetMoveDirection(dir);
             timePassed = 0;

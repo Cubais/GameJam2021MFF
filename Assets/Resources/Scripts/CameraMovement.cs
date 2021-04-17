@@ -41,10 +41,5 @@ public class CameraMovement : MonoBehaviour
             cameraComponent.orthographicSize = Mathf.Lerp(cameraComponent.orthographicSize, targetCameraSize, Time.deltaTime * zoomSpeed);
         }
     }
-
-    private void LateUpdate()
-    {
-        zoomFactor -= Input.GetAxisRaw("Mouse ScrollWheel");        
-    }
 }
 
