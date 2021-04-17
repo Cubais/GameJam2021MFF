@@ -299,8 +299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b23a92e00c3e53849a3a855784e1c127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hookSpeed: 0
-  hookDistance: 10
+  level1HookSpeed: 5
+  level2HookSpeed: 8
   grapplingHook: {fileID: 7689171852086783054, guid: 25d7d096d9a964644a07cb9e9a5b8352, type: 3}
   grapplingHookParent: {fileID: 0}
 --- !u!114 &3698253035030276170
@@ -343,6 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceMultiplier: 700
+  level2ForceMultiplier: 0
   projectilePrefab: {fileID: 2778898360772688946, guid: e33b7b903681b4c4ea3030bfdebdf994, type: 3}
   projectilesParent: {fileID: 0}
   projectilePosition: {fileID: 7969394431844896961}
@@ -373,7 +374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c9cad25155f1e3489dd19c54a49f5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaterTile: {fileID: 0}
   BounceDamp: 0.05
   CenterPositionWaterCheck: {fileID: 5279442545465067313}
   BottomPositionWaterCheck: {fileID: 4302218470369935880}
@@ -405,7 +405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8323143934765135264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.194, z: 0}
+  m_LocalPosition: {x: 0, y: -0.264, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5279442545465067313}

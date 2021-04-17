@@ -14,7 +14,7 @@ public class Tutorial : MonoBehaviour
 
     private void Start()
     {
-        GameObject.Find("Character").GetComponent<PlayerHealth>().levelUpEvent += LevelUpEvent;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().levelUpEvent += LevelUpEvent;
     }
 
     void Update()

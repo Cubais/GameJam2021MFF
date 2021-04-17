@@ -15,7 +15,7 @@ public class ToiletPaper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerTransform = GameObject.Find("Character").GetComponent<Transform>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         healthPickupParentTransform = GameObject.Find("HealthPickupsParent").GetComponent<Transform>();
         hpPickupPrefab = Resources.Load<GameObject>("Prefabs/HealthPickup");
         entityMovement = GetComponent<EntityMovement>();

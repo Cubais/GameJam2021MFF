@@ -19,14 +19,14 @@ public class TutorialEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_playerTransform = GameObject.Find("Character").GetComponent<Transform>();
+        m_playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         m_healthPickupParentTransform = GameObject.Find("HealthPickupsParent").GetComponent<Transform>();
         m_killText = GameObject.Find("KillText");
         m_pickUpText = GameObject.Find("PickUpText");
         m_pickUpPlacer = m_pickUpText.GetComponent<PlaceOnSceneObject>();
         m_hpPickupPrefab = Resources.Load<GameObject>("Prefabs/HealthPickup");
         m_entityMovement = GetComponent<EntityMovement>();
-        m_playerHealth = GameObject.Find("Character").GetComponent<PlayerHealth>();
+        m_playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame

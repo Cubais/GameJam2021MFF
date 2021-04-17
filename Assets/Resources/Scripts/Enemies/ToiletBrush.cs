@@ -23,7 +23,7 @@ public class ToiletBrush : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerTransform = GameObject.Find("Character").GetComponent<Transform>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         healthPickupParentTransform = GameObject.Find("HealthPickupsParent").GetComponent<Transform>();
         projectilesParent = GameObject.Find("ProjectilesParent").GetComponent<Transform>();
         hpPickupPrefab = Resources.Load<GameObject>("Prefabs/HealthPickup");

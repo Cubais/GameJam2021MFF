@@ -16,7 +16,7 @@ public class GrapplingHook : MonoBehaviour
 
     void Start()
     {
-        m_character = GameObject.Find("Character");
+        m_character = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
