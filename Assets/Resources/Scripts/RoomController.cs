@@ -11,10 +11,9 @@ public class RoomController : MonoBehaviour
 
     void Update()
     {
-        if (m_active && transform.childCount > 0)
+        if (m_active && transform.childCount == 0)
         {
             StartCoroutine("RotateTrapdoorsCoroutine");
-
             m_active = false;
         }
     }
@@ -38,9 +37,9 @@ public class RoomController : MonoBehaviour
         {
             foreach (GameObject trapdoor in trapdoors)
             {
-                if (trapdoor.transform.eulerAngles.z > -92f)
+                if (trapdoor.transform.eulerAngles.z <= 1 || trapdoor.transform.eulerAngles.z >= 268)
                 {
-                    trapdoor.transform.eulerAngles = new Vector3(0, 0, trapdoor.transform.eulerAngles.z - rotationSpeed * Time.deltaTime);
+                    trapdoor.transform.eulerAngles = new Vector3(0, 0, trapdoor.transform.eulerAngles.z - rotationSpeed);
                 }
                 else
                 {
