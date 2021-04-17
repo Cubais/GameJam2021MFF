@@ -145,7 +145,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034514888292912902}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c9cad25155f1e3489dd19c54a49f5a5, type: 3}
   m_Name: 
@@ -172,8 +172,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 2
   pickupInitialSpeed: 1
-  shootingFrequencySeconds: 4
+  shootingFrequencySeconds: 2
   ProjectileTransform: {fileID: 814923294871881553}
+  MinDistance: 6
+  MaxDistance: 8
 --- !u!1 &7963380596431952295
 GameObject:
   m_ObjectHideFlags: 0

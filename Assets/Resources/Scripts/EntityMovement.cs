@@ -36,8 +36,7 @@ public class EntityMovement : MonoBehaviour
     }
 
 	private void FixedUpdate()
-	{
-        Debug.Log(m_moveDirection);
+	{        
         m_rigidbody.AddForce(m_moveDirection * Speed);
     }
 
@@ -57,7 +56,6 @@ public class EntityMovement : MonoBehaviour
 
     private void SetInWater()
 	{
-        var tile = m_level.GetTileAtPos(transform.position);
-        m_inWater = (tile != null && tile.Equals(m_waterFloating.WaterTile));
+        m_inWater = m_level.IsAtWaterTile(transform.position);
     }
 }

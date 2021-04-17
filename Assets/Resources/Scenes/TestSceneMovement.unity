@@ -837,10 +837,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToiletBrush
       objectReference: {fileID: 0}
-    - target: {fileID: 1034514888292912902, guid: e88003895472d4647b46e860f7dbf948, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e88003895472d4647b46e860f7dbf948, type: 3}
 --- !u!1001 &4115912179626144455

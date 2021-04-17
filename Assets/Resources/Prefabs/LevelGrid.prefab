@@ -103389,6 +103389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartPosition: {fileID: 5192516387003715421}
+  WaterTile: {fileID: 11400000, guid: 675dd9309ea4008498a219dd43cb4411, type: 2}
   levelTiles: {fileID: 2268678655700337217}
 --- !u!1 &2268678656082369221
 GameObject:

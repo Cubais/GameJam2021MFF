@@ -39,16 +39,16 @@ public class WaterFloating : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        var tileCenter = LevelInfo.instance.GetTileAtPos(CenterPositionWaterCheck.position);
+        var atWaterCenter = LevelInfo.instance.IsAtWaterTile(CenterPositionWaterCheck.position);
         var gravityValue = GravityScale;
 
         if (DebugInfo) 
-            Debug.Log(tileCenter + " " + WaterTile + " " + tileCenter.Equals(WaterTile));
+            Debug.Log(atWaterCenter + " " + WaterTile + " " + atWaterCenter.Equals(WaterTile));
 
         if (BottomPositionWaterCheck != null)
         {
-            var tileBottom = LevelInfo.instance.GetTileAtPos(BottomPositionWaterCheck.position);
-            if (tileBottom == null || !tileBottom.Equals(WaterTile))
+            var atWaterTileBottom = LevelInfo.instance.IsAtWaterTile(BottomPositionWaterCheck.position);
+            if (!atWaterTileBottom)
             {
                 offWaterCount++;
                 gravityValue = (offWaterCount > 5f) ? 2 : GravityScale;
@@ -57,7 +57,7 @@ public class WaterFloating : MonoBehaviour
                 offWaterCount = 0;
         }
 
-        if (tileCenter != null && tileCenter.Equals(WaterTile))
+        if (atWaterCenter)
         {
             m_inWater = true;
 
@@ -74,7 +74,7 @@ public class WaterFloating : MonoBehaviour
                 if (DebugInfo) Debug.Log(gameObject.name + " " + upForce);
             }        
         }
-        else if (tileCenter != null && !tileCenter.Equals(WaterTile))
+        else
         {
             m_inWater = false;
             if (TurnOffGravity && (Time.realtimeSinceStartup - m_turnOnTime > GravitySwitchTimeSpan))
@@ -82,11 +82,7 @@ public class WaterFloating : MonoBehaviour
                 m_rigidbody2D.gravityScale = gravityValue;
                 m_turnOnTime = Time.realtimeSinceStartup;
             }   
-        } 
-        else
-		{
-            m_inWater = false;
-		}
+        }
     }
 
     public void SetApplyWaterForce(bool applyForce)

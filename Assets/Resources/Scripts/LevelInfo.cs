@@ -8,6 +8,7 @@ public class LevelInfo : MonoBehaviour
 	public static LevelInfo instance;
 
 	public Transform StartPosition;
+	public Tile WaterTile;
 
 	[SerializeField]
 	private Tilemap levelTiles;
@@ -27,5 +28,12 @@ public class LevelInfo : MonoBehaviour
 	{
 		Vector3Int posInt = new Vector3Int(Mathf.FloorToInt(position.x), Mathf.FloorToInt(position.y), Mathf.RoundToInt(position.z));
 		return levelTiles.GetTile(posInt);
+	}
+
+	public bool IsAtWaterTile(Vector3 position)
+	{
+		var tile = GetTileAtPos(position);
+
+		return (tile != null && tile.Equals(WaterTile));
 	}
 }
