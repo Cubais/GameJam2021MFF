@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour
     public Vector3 offset;   
 
     [SerializeField]
-    private float smoothSpeed = 0.1f;
+    private float smoothSpeed = 1f;
 
     [SerializeField]
     private float zoomFactor = 1.0f;
