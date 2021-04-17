@@ -45,11 +45,10 @@ public class WaterFloating : MonoBehaviour
         if (DebugInfo) 
             Debug.Log(tileCenter + " " + WaterTile + " " + tileCenter.Equals(WaterTile));
 
-
         if (BottomPositionWaterCheck != null)
         {
             var tileBottom = LevelInfo.instance.GetTileAtPos(BottomPositionWaterCheck.position);
-            if (!tileBottom.Equals(WaterTile))
+            if (tileBottom == null || !tileBottom.Equals(WaterTile))
             {
                 offWaterCount++;
                 gravityValue = (offWaterCount > 5f) ? 3 : GravityScale;
@@ -81,7 +80,11 @@ public class WaterFloating : MonoBehaviour
                 m_rigidbody2D.gravityScale = gravityValue;
                 m_turnOnTime = Time.realtimeSinceStartup;
             }   
-        }        
+        } 
+        else
+		{
+            m_inWater = false;
+		}
     }
 
     public void SetApplyWaterForce(bool applyForce)

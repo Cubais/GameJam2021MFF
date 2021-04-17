@@ -33,6 +33,17 @@ public class DeleteAfterTimePassed : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-        m_outsideWater = !m_waterFloating.InWater();	
+		if (!m_waterFloating.InWater())
+		{
+            m_outsideWater = true;
+		}
+	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.CompareTag("BackgroundColliders") || collision.gameObject.CompareTag("BackgroundWalls"))
+		{
+            m_outsideWater = true;
+		}
 	}
 }

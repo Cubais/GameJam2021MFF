@@ -9,6 +9,8 @@ TagManager:
   - EnemyBullet
   - FriendlyBullet
   - GrapplingHook
+  - BackgroundColliders
+  - BackgroundWalls
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Projectiles
   - Enemies
   - GrapplingHook
-  - 
+  - Background
   - 
   - 
   - 

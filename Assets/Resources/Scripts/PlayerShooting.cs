@@ -7,6 +7,7 @@ public class PlayerShooting : MonoBehaviour
     public float forceMultiplier;
     public GameObject projectilePrefab;
     public Transform projectilesParent;
+    public Transform projectilePosition;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class PlayerShooting : MonoBehaviour
 
             GameObject newProjectile = Instantiate(
                 projectilePrefab,
-                new Vector3(transform.position.x + dir.x / 20, transform.position.y + dir.y / 20, transform.position.z),
+                new Vector3(projectilePosition.position.x + dir.x / 20, projectilePosition.position.y + dir.y / 20, 0),
                 Quaternion.identity, projectilesParent
             );
             var newProjectileRB = newProjectile.GetComponent<Rigidbody2D>();
