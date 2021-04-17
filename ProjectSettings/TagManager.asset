@@ -8,6 +8,7 @@ TagManager:
   - MeleeEnemy
   - EnemyBullet
   - FriendlyBullet
+  - GrapplingHook
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Character
   - Projectiles
   - Enemies
-  - 
+  - GrapplingHook
   - 
   - 
   - 

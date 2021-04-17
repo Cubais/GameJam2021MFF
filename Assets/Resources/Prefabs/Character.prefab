@@ -138,6 +138,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b23a92e00c3e53849a3a855784e1c127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hookSpeed: 0
+  hookDistance: 10
+  grapplingHook: {fileID: 7689171852086783054, guid: 25d7d096d9a964644a07cb9e9a5b8352, type: 3}
+  grapplingHookParent: {fileID: 0}
 --- !u!58 &179470638634533322
 CircleCollider2D:
   m_ObjectHideFlags: 0
