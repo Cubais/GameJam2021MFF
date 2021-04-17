@@ -27,7 +27,7 @@ public class PlayerPicking : MonoBehaviour
 		if (collision.gameObject.CompareTag("Pickup"))
 		{
 			Destroy(collision.gameObject);
-			m_PlayerHealth.ChangeHp(10);
+			m_PlayerHealth.ChangeHp(m_PlayerHealth.DamageSettings.PickUpHealth);
 		}
 	}
 }

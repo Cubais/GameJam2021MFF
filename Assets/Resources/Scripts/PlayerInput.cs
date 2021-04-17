@@ -9,7 +9,8 @@ public class PlayerInput : MonoBehaviour
     public GameObject grapplingHook;
     public Transform grapplingHookParent;
 
-    private int playerLevel = 0;
+    public int PlayerLevel { get; private set; } = 0;
+
     private EntityMovement m_entity;
     private GrapplingHook m_lastHook;
 
@@ -73,16 +74,16 @@ public class PlayerInput : MonoBehaviour
 
     public void LevelUp()
 	{
-        playerLevel++;
+        PlayerLevel++;
 	}
 
     public void ResetLevel()
 	{
-        playerLevel = 0;
+        PlayerLevel = 0;
 	}
 
 	private void OnGUI()
 	{
-        GUI.Label(new Rect(Screen.width - 150, 0, 150, 50), "LEVEL " + playerLevel.ToString());
+        GUI.Label(new Rect(Screen.width - 150, 0, 150, 50), "LEVEL " + PlayerLevel.ToString());
 	}
 }

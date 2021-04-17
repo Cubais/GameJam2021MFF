@@ -7,4 +7,5 @@ public class DamageSettingsSO : ScriptableObject
 {
     public int MeleeDamage;
     public int BrushRangeDamage;
+    public int PickUpHealth;
 }

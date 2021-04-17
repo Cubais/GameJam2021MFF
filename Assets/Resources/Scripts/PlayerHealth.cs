@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     public DamageSettingsSO DamageSettings;
 
     public ParticleSystem LostParticles;
+
+    public event Action<int> levelUpEvent;
 
     private HPManager m_HPManager;
     void Start()
@@ -59,8 +62,10 @@ public class PlayerHealth : MonoBehaviour
 
     private void LevelUP()
 	{
-        GetComponent<PlayerInput>().LevelUp();
+        var playerInput = GetComponent<PlayerInput>();
+        playerInput.LevelUp();
         ResetHP();
+        levelUpEvent(playerInput.PlayerLevel);
 	}
 
     private void Die()

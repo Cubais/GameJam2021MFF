@@ -47,3 +47,4 @@ public class CameraMovement : MonoBehaviour
         zoomFactor -= Input.GetAxisRaw("Mouse ScrollWheel");        
     }
 }
+
