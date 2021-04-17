@@ -54,6 +54,7 @@ public class PlayerHealth : MonoBehaviour
         ResetHP();
         GetComponent<PlayerInput>().ResetLevel();
         m_HPManager.SetHP(CurrentHP);
+        gameObject.transform.position = LevelInfo.instance.StartPosition.position;
 	}        
 
     private void LevelUP()

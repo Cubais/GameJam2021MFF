@@ -7,6 +7,8 @@ public class LevelInfo : MonoBehaviour
 {
 	public static LevelInfo instance;
 
+	public Transform StartPosition;
+
 	[SerializeField]
 	private Tilemap levelTiles;
 
