@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ToiletPaper : MonoBehaviour
 {
-    public float speed = 10;
-    public int hp = 2;
+    public int hp = 3;
     public float pickupInitialSpeed = 1;
 
     private Transform playerTransform;
