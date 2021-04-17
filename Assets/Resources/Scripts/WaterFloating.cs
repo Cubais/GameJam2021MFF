@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class WaterFloating : MonoBehaviour
 {
+    public Tile WaterTile;
+
     public float BounceDamp = 0.05f;
-    public Transform positionCheck;
-    public bool DebugCheck = false;
+    public Transform positionCheck;    
 
     [Tooltip("Should turn off/on gravity when not in water")]
     public bool TurnOffGravity = false;
@@ -25,13 +27,13 @@ public class WaterFloating : MonoBehaviour
     void FixedUpdate()
     {
         var tile = LevelInfo.instance.GetTileAtPos(positionCheck.position);
-
-        if (tile != null && tile.name == "WaterTile" && m_applyWaterForce)
+                
+        if (tile != null && tile.Equals(WaterTile) && m_applyWaterForce)
         {
             if (TurnOffGravity)
                 m_rigidbody2D.gravityScale = 0;
 
-            var upForce = -Physics.gravity * (1f - m_rigidbody2D.velocity.y * BounceDamp);            
+            var upForce = -Physics.gravity * (1f - m_rigidbody2D.velocity.y * BounceDamp);
             m_rigidbody2D.AddForce(upForce);
         }
         else

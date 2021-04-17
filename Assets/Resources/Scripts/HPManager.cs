@@ -16,7 +16,7 @@ public class HPManager : MonoBehaviour, IResettable
 
     public event Action LevelUP;
 
-    private int hpMax = 100;
+    private const int HP_MAX = 100;
     private bool dead = false;
 
     // Start is called before the first frame update
@@ -65,7 +65,7 @@ public class HPManager : MonoBehaviour, IResettable
             Die();
         }
 
-        if (curHp >= hpMax)
+        if (curHp >= HP_MAX)
         {
             if (LevelUP != null)
 			{
@@ -87,6 +87,11 @@ public class HPManager : MonoBehaviour, IResettable
         UpdateVisuals();
     }
 
+    public void ResetHp()
+	{
+        curHp = HP_MAX / 2;
+	}
+
     private void ResetGame()
     {
         ResetLevel();
@@ -95,7 +100,7 @@ public class HPManager : MonoBehaviour, IResettable
     private void UpdateVisuals()
     {
         curHpText.text = curHp.ToString();
-        curHpPanel.anchorMax = new Vector2(curHp / (float) hpMax, curHpPanel.anchorMax.y);
+        curHpPanel.anchorMax = new Vector2(curHp / (float) HP_MAX, curHpPanel.anchorMax.y);
     }
 
     private void Die()

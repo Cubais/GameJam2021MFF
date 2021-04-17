@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2990896646939649400, guid: b3edc34ff37cb4e4480fc1df1144c28d, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2990896646939649400, guid: b3edc34ff37cb4e4480fc1df1144c28d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -331,18 +331,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -4672946721468052104, guid: 9c4f52dafaebd8e4fbba63c354db574a, type: 3}
-      propertyPath: m_LinearDrag
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -4672946721468052104, guid: 9c4f52dafaebd8e4fbba63c354db574a, type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -2109690473640708596, guid: 9c4f52dafaebd8e4fbba63c354db574a, type: 3}
-      propertyPath: TurnOffGravity
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2541749634838626745, guid: 9c4f52dafaebd8e4fbba63c354db574a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -475,7 +463,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1600119450
 MonoBehaviour:
@@ -509,6 +497,11 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!4 &2058036730 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4109164056606324029, guid: 121e493b6292a1843a9022bd349772e2, type: 3}
+  m_PrefabInstance: {fileID: 2726308725935577804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &12331828415682150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -516,9 +509,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 683369646, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
+      propertyPath: pickupParent
+      value: 
+      objectReference: {fileID: 2058036730}
     - target: {fileID: 12331830060347025, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 12331830060347025, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
       propertyPath: m_LocalPosition.x
@@ -564,9 +561,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
-    - target: {fileID: 2935379767920166741, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
     - target: {fileID: 5384687544936872581, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
       propertyPath: projectilesParent
       value: 
@@ -586,7 +580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1733412379510852174, guid: e3421f5cd58255449adcb90a9d9fce7c, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1733412379510852174, guid: e3421f5cd58255449adcb90a9d9fce7c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -799,7 +793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2268678656082369211, guid: 32d5430e6a8b814469f8a8d4c39e8c03, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2268678656082369211, guid: 32d5430e6a8b814469f8a8d4c39e8c03, type: 3}
       propertyPath: m_LocalPosition.x
@@ -854,18 +848,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 258147908563773885, guid: 74a7a811613399041891ff1dc948bf00, type: 3}
-      propertyPath: m_Name
-      value: ToiletPaper
-      objectReference: {fileID: 0}
-    - target: {fileID: 258147908563773885, guid: 74a7a811613399041891ff1dc948bf00, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 258147908563773887, guid: 74a7a811613399041891ff1dc948bf00, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 4109164056606324029, guid: 121e493b6292a1843a9022bd349772e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.2705033
@@ -910,6 +892,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthPickupsParent
       objectReference: {fileID: 0}
+    - target: {fileID: 258147908563773885, guid: 74a7a811613399041891ff1dc948bf00, type: 3}
+      propertyPath: m_Name
+      value: ToiletPaper
+      objectReference: {fileID: 0}
+    - target: {fileID: 258147908563773885, guid: 74a7a811613399041891ff1dc948bf00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 258147908563773887, guid: 74a7a811613399041891ff1dc948bf00, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 121e493b6292a1843a9022bd349772e2, type: 3}
 --- !u!1001 &6344604540609945755
@@ -921,7 +915,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6344604539739319097, guid: 3be362a83638540439554ab9de7a1fef, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6344604539739319097, guid: 3be362a83638540439554ab9de7a1fef, type: 3}
       propertyPath: m_LocalPosition.x

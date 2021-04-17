@@ -24,7 +24,7 @@ public class PlayerInput : MonoBehaviour
             vertical = Mathf.Clamp(vertical, -1.0f, 0f);            
         }
 
-        Debug.Log("Vertical " + vertical);
+        //Debug.Log("Vertical " + vertical);
 
         entity.SetMoveDirection(new Vector3(horizontal, vertical, 0));
     }

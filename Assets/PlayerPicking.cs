@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerPicking : MonoBehaviour
 {
 	public GameObject pickupPrefab;
+	public Transform pickupParent;
 
     private HPManager m_HPManager;
 
@@ -18,7 +19,7 @@ public class PlayerPicking : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Q))
 		{
-			GameObject.Instantiate(pickupPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition) + Vector3.forward * 10f, Quaternion.identity);
+			GameObject.Instantiate(pickupPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition) + Vector3.forward * 10f, Quaternion.identity, pickupParent);
 		}
 	}
 
@@ -26,12 +27,13 @@ public class PlayerPicking : MonoBehaviour
 	{
 		if (collision.gameObject.CompareTag("Pickup"))
 		{
-			
+			Destroy(collision.gameObject);
+			m_HPManager.ChangeHp(10);
 		}
 	}
 
 	private void LevelUp()
 	{
-
+		m_HPManager.ResetHp();
 	}
 }

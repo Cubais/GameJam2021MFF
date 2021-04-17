@@ -124,7 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 25
-  m_feetTransform: {fileID: 0}
 --- !u!114 &259912038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c9cad25155f1e3489dd19c54a49f5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WaterTile: {fileID: 11400000, guid: 675dd9309ea4008498a219dd43cb4411, type: 2}
   BounceDamp: 0.05
   positionCheck: {fileID: 12331830060347025}
   DebugCheck: 0
@@ -197,6 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupPrefab: {fileID: 2541749634838626747, guid: 9c4f52dafaebd8e4fbba63c354db574a, type: 3}
+  pickupParent: {fileID: 0}
 --- !u!1001 &4897263945264385636
 PrefabInstance:
   m_ObjectHideFlags: 0
