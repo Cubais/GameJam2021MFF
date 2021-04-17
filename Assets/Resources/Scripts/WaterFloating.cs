@@ -5,8 +5,6 @@ using UnityEngine.Tilemaps;
 
 public class WaterFloating : MonoBehaviour
 {
-    public Tile WaterTile;
-
     public float BounceDamp = 0.05f;
     public Transform CenterPositionWaterCheck;
     public Transform BottomPositionWaterCheck;
@@ -41,9 +39,6 @@ public class WaterFloating : MonoBehaviour
     {
         var atWaterCenter = LevelInfo.instance.IsAtWaterTile(CenterPositionWaterCheck.position);
         var gravityValue = GravityScale;
-
-        if (DebugInfo) 
-            Debug.Log(atWaterCenter + " " + WaterTile + " " + atWaterCenter.Equals(WaterTile));
 
         if (BottomPositionWaterCheck != null)
         {
