@@ -40,12 +40,13 @@ public class EntityMovement : MonoBehaviour
         m_rigidbody.AddForce(m_moveDirection * Speed);
     }
 
-    public void SetMoveDirection(Vector3 direction)
+    public void SetMoveDirection(Vector3 direction, bool changeWaterForce)
 	{
         m_moveDirection = direction.normalized;
 
         // Not applying force when going up or down
-        m_waterFloating.SetApplyWaterForce(m_moveDirection.y == 0f);
+        if (changeWaterForce)        
+            m_waterFloating.SetApplyWaterForce(m_moveDirection.y == 0f);
 	}
 
     public bool InWater()

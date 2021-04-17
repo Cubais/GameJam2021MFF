@@ -183,6 +183,7 @@ MonoBehaviour:
   WaterTile: {fileID: 11400000, guid: 675dd9309ea4008498a219dd43cb4411, type: 2}
   BounceDamp: 0.05
   positionCheck: {fileID: 12331830060347025}
+  DebugInfo: 0
   TurnOffGravity: 1
 --- !u!114 &683369646
 MonoBehaviour:
@@ -211,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 100
+  DamageSettings: {fileID: 11400000, guid: f72d76fc647e9aa4098a77080d590b90, type: 2}
   LostParticles: {fileID: 5312593024849091088}
 --- !u!1001 &4897263945264385636
 PrefabInstance:

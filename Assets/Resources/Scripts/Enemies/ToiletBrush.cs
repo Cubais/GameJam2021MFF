@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ToiletBrush : MonoBehaviour
-{
-    public float speed = 10;
+{    
     public int hp = 2;
     public float pickupInitialSpeed = 1;
     public float shootingFrequencySeconds = 5;
@@ -37,7 +36,7 @@ public class ToiletBrush : MonoBehaviour
         Vector2 dir = new Vector2(dir3.x, dir3.y).normalized;
 
         // Move away from the player
-        entityMovement.SetMoveDirection(-1 * dir);
+        entityMovement.SetMoveDirection(-1 * dir, false);
 
         // Every few seconds, fire a projectile towards the player
         timePassed += Time.deltaTime;

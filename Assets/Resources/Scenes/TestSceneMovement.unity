@@ -275,7 +275,7 @@ PrefabInstance:
       objectReference: {fileID: 948082641}
     - target: {fileID: 4567405139539468654, guid: aaf724793816e914f90f320c6add8fc1, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4567405139539468654, guid: aaf724793816e914f90f320c6add8fc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -333,7 +333,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2541749634838626745, guid: 9c4f52dafaebd8e4fbba63c354db574a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2541749634838626745, guid: 9c4f52dafaebd8e4fbba63c354db574a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -560,7 +560,6 @@ PrefabInstance:
     - target: {fileID: 12331830060347027, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
       propertyPath: m_Name
       value: Character
-      objectReference: {fileID: 0}
       objectReference: {fileID: 0}
     - target: {fileID: 5384687544936872581, guid: 15e1edbc06b3d7b4a92ed41eb94d8573, type: 3}
       propertyPath: projectilesParent
@@ -961,10 +960,6 @@ PrefabInstance:
     - target: {fileID: 1034514888292912902, guid: e88003895472d4647b46e860f7dbf948, type: 3}
       propertyPath: m_Name
       value: ToiletBrush
-      objectReference: {fileID: 0}
-    - target: {fileID: 1040501339229734176, guid: e88003895472d4647b46e860f7dbf948, type: 3}
-      propertyPath: TurnOffGravity
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e88003895472d4647b46e860f7dbf948, type: 3}

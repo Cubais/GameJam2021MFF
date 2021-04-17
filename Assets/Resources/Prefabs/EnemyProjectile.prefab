@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8225438213787958498}
   - component: {fileID: 7578244060282096634}
   - component: {fileID: 6024294436469899723}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: EnemyProjectile
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -127,9 +127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c9cad25155f1e3489dd19c54a49f5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WaterTile: {fileID: 0}
   BounceDamp: 0.05
   positionCheck: {fileID: 1327379716943099037}
-  DebugCheck: 0
+  DebugInfo: 0
   TurnOffGravity: 0
 --- !u!114 &6024294436469899723
 MonoBehaviour:

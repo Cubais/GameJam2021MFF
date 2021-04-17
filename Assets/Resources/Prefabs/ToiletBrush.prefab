@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6502b4a1241734143868c7cba51c2fde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
+  Speed: 10
 --- !u!58 &868352420282671199
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -149,10 +149,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c9cad25155f1e3489dd19c54a49f5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WaterTile: {fileID: 11400000, guid: 675dd9309ea4008498a219dd43cb4411, type: 2}
   BounceDamp: 0.05
   positionCheck: {fileID: 1034514888292912900}
-  DebugCheck: 0
-  TurnOffGravity: 0
+  DebugInfo: 0
+  TurnOffGravity: 1
 --- !u!114 &1034514888292912903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84a20b653e647d40880b2ad3b6deb5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
   hp: 2
   pickupInitialSpeed: 1
   shootingFrequencySeconds: 4

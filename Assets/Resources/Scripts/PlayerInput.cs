@@ -6,6 +6,8 @@ public class PlayerInput : MonoBehaviour
 {    
     private EntityMovement entity;
 
+    private int playerLevel = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,11 @@ public class PlayerInput : MonoBehaviour
 
         //Debug.Log("Vertical " + vertical);
 
-        entity.SetMoveDirection(new Vector3(horizontal, vertical, 0));
+        entity.SetMoveDirection(new Vector3(horizontal, vertical, 0), true);
     }
+
+    public void LevelUp()
+	{
+        playerLevel++;
+	}
 }

@@ -27,7 +27,7 @@ public class ToiletPaper : MonoBehaviour
         Vector3 dir3 = playerTransform.position - transform.position;
         Vector2 dir = new Vector2(dir3.x, dir3.y).normalized;
 
-        entityMovement.SetMoveDirection(dir);
+        entityMovement.SetMoveDirection(dir, false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

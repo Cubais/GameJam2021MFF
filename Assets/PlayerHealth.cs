@@ -7,9 +7,11 @@ public class PlayerHealth : MonoBehaviour
     public int MaxHP = 100;
     public int CurrentHP { get; private set; } = 50;
 
+    public DamageSettingsSO DamageSettings;
+
     public ParticleSystem LostParticles;
 
-    private HPManager m_HPManager;    
+    private HPManager m_HPManager;
     void Start()
     {
         m_HPManager = HPManager.instance;
@@ -48,12 +50,34 @@ public class PlayerHealth : MonoBehaviour
 
     private void LevelUP()
 	{
-        CurrentHP = MaxHP / 2;
-        m_HPManager.SetHP(CurrentHP);
+        GetComponent<PlayerInput>().LevelUp();
 	}
 
     private void Die()
 	{
         m_HPManager.Die();
+    }
+
+    private void ResetHP()
+	{
+        CurrentHP = MaxHP / 2;
+        m_HPManager.SetHP(CurrentHP);
+    }
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+        if (collision.gameObject.CompareTag("MeleeEnemy"))
+		{
+            ChangeHp(-DamageSettings.MeleeDamage);
+		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            ChangeHp(-DamageSettings.BrushRangeDamage);
+            Destroy(collision.gameObject);
+        }
     }
 }
