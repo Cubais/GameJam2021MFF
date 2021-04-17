@@ -46,5 +46,5 @@ MonoBehaviour:
   curHp: 50
   curHpPanel: {fileID: 0}
   curHpText: {fileID: 0}
-  LostHpParticles: {fileID: 0}
   gameOverPanel: {fileID: 0}
+  Player: {fileID: 0}

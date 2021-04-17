@@ -35,4 +35,14 @@ public class PlayerInput : MonoBehaviour
 	{
         playerLevel++;
 	}
+
+    public void ResetLevel()
+	{
+        playerLevel = 0;
+	}
+
+	private void OnGUI()
+	{
+        GUI.Label(new Rect(Screen.width - 150, 0, 150, 50), "LEVEL " + playerLevel.ToString());
+	}
 }

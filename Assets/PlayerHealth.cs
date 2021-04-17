@@ -48,9 +48,18 @@ public class PlayerHealth : MonoBehaviour
 		}
 	}
 
+    public void ResetPlayer()
+	{
+        LostParticles.Clear();
+        ResetHP();
+        GetComponent<PlayerInput>().ResetLevel();
+        m_HPManager.SetHP(CurrentHP);
+	}        
+
     private void LevelUP()
 	{
         GetComponent<PlayerInput>().LevelUp();
+        ResetHP();
 	}
 
     private void Die()

@@ -10,9 +10,10 @@ public class HPManager : MonoBehaviour, IResettable
 
     public int curHp = 50;
     public RectTransform curHpPanel;
-    public Text curHpText;
-    public ParticleSystem LostHpParticles;
+    public Text curHpText;    
     public GameObject gameOverPanel;
+
+    public GameObject Player;
 
     private int m_maxHP = 0;
 
@@ -22,15 +23,22 @@ public class HPManager : MonoBehaviour, IResettable
         if (!instance)
             instance = this;
         else
-            Debug.LogError("HP MANAGER ALREADY SET!");        
+            Debug.LogError("HP MANAGER ALREADY SET!");
     }
 
+    void Update()
+	{
+        if (gameOverPanel.activeSelf && Input.GetKeyDown(KeyCode.Space))
+		{
+            ResetLevel();
+		}
+	}
+
     public void ResetLevel()
-    {
-        LostHpParticles.Clear();        
+    {          
         gameOverPanel.SetActive(false);
         Time.timeScale = 1;
-        curHp = 50;
+        Player.GetComponent<PlayerHealth>().ResetPlayer();
         UpdateVisuals();
     }
 
