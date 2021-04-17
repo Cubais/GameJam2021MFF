@@ -576,6 +576,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 204879533, guid: b3edc34ff37cb4e4480fc1df1144c28d, type: 3}
   m_PrefabInstance: {fileID: 92545223}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1504553303 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1816303917754224106, guid: f07ff04a6e89f124fbb35dbe61918094, type: 3}
+  m_PrefabInstance: {fileID: 8032476643081915938}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2058036730 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4109164056606324029, guid: 121e493b6292a1843a9022bd349772e2, type: 3}
@@ -778,7 +783,7 @@ PrefabInstance:
     - target: {fileID: 7287238244413039100, guid: a432a8c3ddd2b29418bc094d29d917f1, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1504553303}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a432a8c3ddd2b29418bc094d29d917f1, type: 3}
 --- !u!1001 &1377042088688905831
@@ -1826,6 +1831,10 @@ PrefabInstance:
     - target: {fileID: 1816303917754224106, guid: f07ff04a6e89f124fbb35dbe61918094, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207919637148618211, guid: f07ff04a6e89f124fbb35dbe61918094, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3161443308313687779, guid: f07ff04a6e89f124fbb35dbe61918094, type: 3}
       propertyPath: projectilesParent
