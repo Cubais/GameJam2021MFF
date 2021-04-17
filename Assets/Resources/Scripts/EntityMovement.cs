@@ -56,6 +56,6 @@ public class EntityMovement : MonoBehaviour
     private void SetInWater()
 	{
         var tile = m_level.GetTileAtPos(transform.position);
-        m_inWater = !(tile == null || tile.name != "WaterTile");
+        m_inWater = (tile != null && tile.name == "WaterTile");
     }
 }

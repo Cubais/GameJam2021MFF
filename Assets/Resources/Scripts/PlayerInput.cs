@@ -20,7 +20,11 @@ public class PlayerInput : MonoBehaviour
 
         // Cannot go Up if not in the water
         if (!entity.InWater())
-            vertical = Mathf.Clamp(vertical, -1.0f, 0f);
+        {
+            vertical = Mathf.Clamp(vertical, -1.0f, 0f);            
+        }
+
+        Debug.Log("Vertical " + vertical);
 
         entity.SetMoveDirection(new Vector3(horizontal, vertical, 0));
     }
