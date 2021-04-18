@@ -48,3 +48,4 @@ MonoBehaviour:
   curHpText: {fileID: 0}
   gameOverPanel: {fileID: 0}
   Player: {fileID: 0}
+  RoomControllersToReset: {fileID: 0}

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HPManager : MonoBehaviour, IResettable
+public class HPManager : MonoBehaviour
 {
     public static HPManager instance;
 
@@ -12,8 +12,14 @@ public class HPManager : MonoBehaviour, IResettable
     public RectTransform curHpPanel;
     public Text curHpText;    
     public GameObject gameOverPanel;
+    public GameObject KeysTutorialPanel, TutorialEnemyPanel, GrapplingTutorial;
+    public PlaceOnSceneObject killText, pickupText;
+    public Transform OutOfScreen;
 
     public GameObject Player;
+
+    public Transform RoomControllersToReset;
+    public Transform HealthPickupsParent, GrapplingHookParent, ProjectilesParent;
 
     private int m_maxHP = 0;
 
@@ -30,16 +36,44 @@ public class HPManager : MonoBehaviour, IResettable
 	{
         if (gameOverPanel.activeSelf && Input.GetKeyDown(KeyCode.Space))
 		{
-            ResetLevel();
+            StartCoroutine("ResetLevel");
 		}
 	}
 
-    public void ResetLevel()
+    public IEnumerator ResetLevel()
     {          
         gameOverPanel.SetActive(false);
+        KeysTutorialPanel.SetActive(false);
+        TutorialEnemyPanel.SetActive(false);
+        GrapplingTutorial.SetActive(false);
         Time.timeScale = 1;
         Player.GetComponent<PlayerHealth>().ResetPlayer();
+
+        yield return null;
+
+        foreach (Transform room in RoomControllersToReset)
+        {
+            RoomController roomRC = room.GetComponent<RoomController>();
+            roomRC.ResetLevel();
+        }
+
+        foreach (Transform child in HealthPickupsParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (Transform child in GrapplingHookParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (Transform child in ProjectilesParent)
+        {
+            Destroy(child.gameObject);
+        }
+
         UpdateVisuals();
+        yield return null;
     }
 
     public void SetMaxHP(int amount)

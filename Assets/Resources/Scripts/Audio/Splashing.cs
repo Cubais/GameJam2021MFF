@@ -27,7 +27,6 @@ public class Splashing : MonoBehaviour
         }
 
         bool curInWater = LevelInfo.instance.IsAtWaterTile(transform.position);
-        Debug.Log(curInWater);
 
         if (!m_prevFrameInWater && curInWater)
         {

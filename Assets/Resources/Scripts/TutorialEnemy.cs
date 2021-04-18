@@ -24,6 +24,10 @@ public class TutorialEnemy : MonoBehaviour
         m_playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         m_healthPickupParentTransform = GameObject.Find("HealthPickupsParent").GetComponent<Transform>();
         m_killText = GameObject.Find("KillText");
+        if (m_killText == null)
+        {
+            return;
+        }
         m_pickUpText = GameObject.Find("PickUpText");
         m_pickUpPlacer = m_pickUpText.GetComponent<PlaceOnSceneObject>();
         m_hpPickupPrefab = Resources.Load<GameObject>("Prefabs/HealthPickup");
@@ -50,6 +54,17 @@ public class TutorialEnemy : MonoBehaviour
             m_audioSource.PlayOneShot(m_enemyHitSound);
             Destroy(collision.gameObject);
         }
+    }
+
+    public void SecondStart()
+    {
+        m_playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        m_healthPickupParentTransform = GameObject.Find("HealthPickupsParent").GetComponent<Transform>();
+        m_hpPickupPrefab = Resources.Load<GameObject>("Prefabs/HealthPickup");
+        m_entityMovement = GetComponent<EntityMovement>();
+        m_audioSource = GetComponent<AudioSource>();
+        m_enemyHitSound = Resources.Load("Audio/FX/enemy_hit/hitenemy") as AudioClip;
+        m_playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
 
     private void DecreaseHp()
@@ -81,9 +96,11 @@ public class TutorialEnemy : MonoBehaviour
             }
         }
 
-        m_killText.SetActive(false);
-        m_pickUpText.SetActive(true);
-        m_pickUpPlacer.sceneObject = firstPickup.transform;
+        if (m_killText != null) {
+            m_killText.SetActive(false);
+            m_pickUpText.SetActive(true);
+            m_pickUpPlacer.sceneObject = firstPickup.transform;
+        }
 
         Destroy(gameObject);
     }
