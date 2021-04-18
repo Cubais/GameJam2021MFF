@@ -34,8 +34,8 @@ public class PlayerHealth : MonoBehaviour
 
 	private void Update()
 	{
-        /*if (Input.GetKeyDown(KeyCode.L))
-            LevelUP();*/
+        if (Input.GetKeyDown(KeyCode.L))
+            LevelUP();
 	}
 
 	public void ChangeHp(int byAmount)

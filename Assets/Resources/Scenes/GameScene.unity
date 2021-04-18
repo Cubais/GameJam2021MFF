@@ -576,11 +576,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1816303917754224106, guid: 5847303c635153943a7983a27cbbf59d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.02
+      value: -9.99
       objectReference: {fileID: 0}
     - target: {fileID: 1816303917754224106, guid: 5847303c635153943a7983a27cbbf59d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.9
+      value: 28.29
       objectReference: {fileID: 0}
     - target: {fileID: 1816303917754224106, guid: 5847303c635153943a7983a27cbbf59d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -614,16 +614,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3161443308313687779, guid: 5847303c635153943a7983a27cbbf59d, type: 3}
+      propertyPath: projectilesParent
+      value: 
+      objectReference: {fileID: 338435365}
     - target: {fileID: 4036685897639336120, guid: 5847303c635153943a7983a27cbbf59d, type: 3}
       propertyPath: m_Name
       value: Poo1
       objectReference: {fileID: 0}
+    - target: {fileID: 4630696655455983576, guid: 5847303c635153943a7983a27cbbf59d, type: 3}
+      propertyPath: grapplingHookParent
+      value: 
+      objectReference: {fileID: 512747890}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5847303c635153943a7983a27cbbf59d, type: 3}
 --- !u!1 &776105355 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 942522439169115158, guid: bea64d93e0d072e46bf1faeb74ed66f6, type: 3}
   m_PrefabInstance: {fileID: 942522438535670173}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &817004942 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1816303917754224106, guid: 5847303c635153943a7983a27cbbf59d, type: 3}
+  m_PrefabInstance: {fileID: 698230739}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &828067443 stripped
 GameObject:
@@ -971,7 +984,7 @@ PrefabInstance:
     - target: {fileID: 7287238244413039100, guid: a432a8c3ddd2b29418bc094d29d917f1, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 817004942}
     - target: {fileID: 8365482454279787045, guid: a432a8c3ddd2b29418bc094d29d917f1, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
