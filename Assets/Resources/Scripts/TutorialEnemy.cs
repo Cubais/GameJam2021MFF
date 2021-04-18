@@ -15,6 +15,8 @@ public class TutorialEnemy : MonoBehaviour
     private GameObject m_hpPickupPrefab;
     private EntityMovement m_entityMovement;
     private PlayerHealth m_playerHealth;
+    private AudioSource m_audioSource;
+    private AudioClip m_enemyHitSound;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,8 @@ public class TutorialEnemy : MonoBehaviour
         m_hpPickupPrefab = Resources.Load<GameObject>("Prefabs/HealthPickup");
         m_entityMovement = GetComponent<EntityMovement>();
         m_playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        m_audioSource = GetComponent<AudioSource>();
+        m_enemyHitSound = Resources.Load("Audio/FX/enemy_hit/hitenemy") as AudioClip;
     }
 
     // Update is called once per frame
@@ -43,6 +47,7 @@ public class TutorialEnemy : MonoBehaviour
         if (collision.gameObject.CompareTag("FriendlyBullet")) // player projectile collision
         {
             DecreaseHp();
+            m_audioSource.PlayOneShot(m_enemyHitSound);
             Destroy(collision.gameObject);
         }
     }

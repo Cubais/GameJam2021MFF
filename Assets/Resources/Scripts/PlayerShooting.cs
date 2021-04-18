@@ -9,9 +9,15 @@ public class PlayerShooting : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform projectilesParent;
     public Transform projectilePosition;
+
+    private AudioSource m_audioSource;
+    private AudioClip m_shootSound;
+
     private void Start()
     {
         GetComponent<PlayerHealth>().levelUpEvent += LevelUpEvent;
+        m_audioSource = GetComponent<AudioSource>();
+        m_shootSound = Resources.Load("Audio/FX/shooting/202230__deraj__pop-sound") as AudioClip;
     }
 
     void Update()
@@ -26,8 +32,10 @@ public class PlayerShooting : MonoBehaviour
                 new Vector3(projectilePosition.position.x + dir.x / 20, projectilePosition.position.y + dir.y / 20, 0),
                 Quaternion.identity, projectilesParent
             );
+
             var newProjectileRB = newProjectile.GetComponent<Rigidbody2D>();
             newProjectileRB.AddForce(dir * forceMultiplier);
+            m_audioSource.PlayOneShot(m_shootSound);
         }
     }
 

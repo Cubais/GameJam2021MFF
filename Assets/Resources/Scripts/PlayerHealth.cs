@@ -15,10 +15,19 @@ public class PlayerHealth : MonoBehaviour
     public event Action<int> levelUpEvent;
 
     private HPManager m_HPManager;
+    private AudioSource m_audioSource;
+    private AudioClip m_playerHitSound;
+    private AudioClip m_playerLevelUpSound;
+    private AudioClip m_playerDeathSound;
+
     void Start()
     {
         m_HPManager = HPManager.instance;
         m_HPManager.SetMaxHP(MaxHP);
+        m_audioSource = GetComponent<AudioSource>();
+        m_playerHitSound = Resources.Load("Audio/FX/hit/playerhit") as AudioClip;
+        m_playerLevelUpSound = Resources.Load("Audio/FX/levelUp/141695__copyc4t__levelup") as AudioClip;
+        m_playerDeathSound = Resources.Load("Audio/FX/gameOver/415096__wolderado__game-over") as AudioClip;
     }
 
 	private void Update()
@@ -64,12 +73,14 @@ public class PlayerHealth : MonoBehaviour
 	{
         var playerInput = GetComponent<PlayerInput>();
         playerInput.LevelUp();
+        m_audioSource.PlayOneShot(m_playerLevelUpSound);
         ResetHP();
         levelUpEvent(playerInput.PlayerLevel);
 	}
 
     private void Die()
 	{
+        m_audioSource.PlayOneShot(m_playerDeathSound);
         m_HPManager.Die();
     }
 
@@ -86,6 +97,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("MeleeEnemy"))
 		{
             ChangeHp(-DamageSettings.MeleeDamage);
+            m_audioSource.PlayOneShot(m_playerHitSound);
 		}
 	}
 
@@ -96,6 +108,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             ChangeHp(-DamageSettings.BrushRangeDamage);
+            m_audioSource.PlayOneShot(m_playerHitSound);
             Destroy(collision.gameObject);
         }
     }
