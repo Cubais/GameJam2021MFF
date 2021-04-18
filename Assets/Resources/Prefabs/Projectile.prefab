@@ -328,7 +328,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.25244746, g: 0.2982382, b: 0.8773585, a: 1}
+      maxColor: {r: 0.2216981, g: 0.9240376, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1586,7 +1586,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+    - sprite: {fileID: 21300000, guid: e447b06c5f3aebc4bbd640d5067872d2, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4923,7 +4923,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c9cad25155f1e3489dd19c54a49f5a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaterTile: {fileID: 11400000, guid: 675dd9309ea4008498a219dd43cb4411, type: 2}
   BounceDamp: 0.05
   CenterPositionWaterCheck: {fileID: 0}
   BottomPositionWaterCheck: {fileID: 0}

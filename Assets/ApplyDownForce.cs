@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ApplyDownForce : MonoBehaviour
 {
-    private float forceSize = 30;
+    private float forceSize = 40;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
