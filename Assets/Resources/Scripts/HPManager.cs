@@ -11,7 +11,7 @@ public class HPManager : MonoBehaviour
     public int curHp = 50;
     public RectTransform curHpPanel;
     public Text curHpText;    
-    public GameObject gameOverPanel;
+    public GameObject gameOverPanel, winScreen;
     public GameObject KeysTutorialPanel, TutorialEnemyPanel, GrapplingTutorial;
     public PlaceOnSceneObject killText, pickupText;
     public Transform OutOfScreen;
@@ -34,7 +34,7 @@ public class HPManager : MonoBehaviour
 
     void Update()
 	{
-        if (gameOverPanel.activeSelf && Input.GetKeyDown(KeyCode.Space))
+        if ((gameOverPanel.activeSelf || winScreen.activeSelf) && Input.GetKeyDown(KeyCode.Space))
 		{
             StartCoroutine("ResetLevel");
 		}
@@ -43,6 +43,7 @@ public class HPManager : MonoBehaviour
     public IEnumerator ResetLevel()
     {          
         gameOverPanel.SetActive(false);
+        winScreen.SetActive(false);
         KeysTutorialPanel.SetActive(false);
         TutorialEnemyPanel.SetActive(false);
         GrapplingTutorial.SetActive(false);

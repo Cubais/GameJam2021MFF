@@ -47,5 +47,14 @@ MonoBehaviour:
   curHpPanel: {fileID: 0}
   curHpText: {fileID: 0}
   gameOverPanel: {fileID: 0}
+  KeysTutorialPanel: {fileID: 0}
+  TutorialEnemyPanel: {fileID: 0}
+  GrapplingTutorial: {fileID: 0}
+  killText: {fileID: 0}
+  pickupText: {fileID: 0}
+  OutOfScreen: {fileID: 0}
   Player: {fileID: 0}
   RoomControllersToReset: {fileID: 0}
+  HealthPickupsParent: {fileID: 0}
+  GrapplingHookParent: {fileID: 0}
+  ProjectilesParent: {fileID: 0}
