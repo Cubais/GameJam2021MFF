@@ -96,6 +96,6 @@ public class PlayerInput : MonoBehaviour
 
 	private void OnGUI()
 	{
-        GUI.Label(new Rect(Screen.width - 150, 0, 150, 50), "LEVEL " + PlayerLevel.ToString());
+        //GUI.Label(new Rect(Screen.width - 150, 0, 150, 50), "LEVEL " + PlayerLevel.ToString());
 	}
 }

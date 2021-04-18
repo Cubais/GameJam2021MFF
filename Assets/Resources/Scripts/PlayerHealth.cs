@@ -47,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
             LostParticles.Emit(5);
 
         CurrentHP += byAmount;
-        m_HPManager.SetHP(CurrentHP);
+        m_HPManager.SetHP(Math.Min(CurrentHP, MaxHP));
 
         if (CurrentHP <= 0)
 		{
@@ -72,6 +72,10 @@ public class PlayerHealth : MonoBehaviour
     private void LevelUP()
 	{
         var playerInput = GetComponent<PlayerInput>();
+        if (playerInput.PlayerLevel >= 2)
+        {
+            return;
+        }
         playerInput.LevelUp();
         m_audioSource.PlayOneShot(m_playerLevelUpSound);
         ResetHP();
