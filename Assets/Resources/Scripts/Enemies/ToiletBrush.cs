@@ -19,6 +19,9 @@ public class ToiletBrush : MonoBehaviour
     private EntityMovement entityMovement;
     private float timePassed;
     private Rigidbody2D m_rigidbody;
+    private AudioSource m_audioSource;
+    private AudioClip m_enemyHitSound;
+    private AudioClip m_enemyShootSound;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +35,9 @@ public class ToiletBrush : MonoBehaviour
         timePassed = 0;
 
         m_rigidbody = GetComponent<Rigidbody2D>();
+        m_audioSource = GetComponent<AudioSource>();
+        m_enemyHitSound = Resources.Load("Audio/FX/enemy_hit/hitenemy") as AudioClip;
+        m_enemyShootSound = Resources.Load("Audio/FX/enemy_shooting/545199__cbj-student__pop-3") as AudioClip;
     }
 
     // Update is called once per frame
@@ -57,6 +63,7 @@ public class ToiletBrush : MonoBehaviour
                 GameObject projectile = Instantiate(projectilePrefab, ProjectileTransform.position, Quaternion.identity, projectilesParent);
                 var projectileScript = projectile.GetComponent<EnemyProjectile>();
                 projectileScript.SetMoveDirection((playerTransform.position - transform.position).normalized);
+                m_audioSource.PlayOneShot(m_enemyShootSound);
                 timePassed = 0;
             }
         }
@@ -71,6 +78,7 @@ public class ToiletBrush : MonoBehaviour
         if (collision.gameObject.CompareTag("FriendlyBullet")) // player projectile collision
         {
             DecreaseHp();
+            m_audioSource.PlayOneShot(m_enemyHitSound);
             Destroy(collision.gameObject);
         }
     }

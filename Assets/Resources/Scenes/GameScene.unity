@@ -294,6 +294,18 @@ PrefabInstance:
       propertyPath: grapplingHookParent
       value: 
       objectReference: {fileID: 512747890}
+    - target: {fileID: 6868457805851633097, guid: 5847303c635153943a7983a27cbbf59d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868457805851633097, guid: 5847303c635153943a7983a27cbbf59d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.055
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868457805851633097, guid: 5847303c635153943a7983a27cbbf59d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5847303c635153943a7983a27cbbf59d, type: 3}
 --- !u!4 &338435365 stripped

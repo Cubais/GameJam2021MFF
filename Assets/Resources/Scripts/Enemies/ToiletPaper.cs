@@ -11,6 +11,8 @@ public class ToiletPaper : MonoBehaviour
     private Transform healthPickupParentTransform;
     private GameObject hpPickupPrefab;
     private EntityMovement entityMovement;
+    private AudioSource m_audioSource;
+    private AudioClip m_enemyHitSound;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,8 @@ public class ToiletPaper : MonoBehaviour
         healthPickupParentTransform = GameObject.Find("HealthPickupsParent").GetComponent<Transform>();
         hpPickupPrefab = Resources.Load<GameObject>("Prefabs/HealthPickup");
         entityMovement = GetComponent<EntityMovement>();
+        m_audioSource = GetComponent<AudioSource>();
+        m_enemyHitSound = Resources.Load("Audio/FX/enemy_hit/hitenemy") as AudioClip;
     }
 
     // Update is called once per frame
@@ -35,6 +39,7 @@ public class ToiletPaper : MonoBehaviour
         if (collision.gameObject.CompareTag("FriendlyBullet")) // player projectile collision
         {
             DecreaseHp();
+            m_audioSource.PlayOneShot(m_enemyHitSound);
             Destroy(collision.gameObject);
         }
     }

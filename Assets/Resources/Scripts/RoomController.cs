@@ -8,12 +8,20 @@ public class RoomController : MonoBehaviour
     public float rotationSpeed = 10;
 
     private bool m_active;
+    private AudioClip m_flushSound;
+
+    private void Start()
+    {
+        m_flushSound = Resources.Load("Audio/FX/flushes/274448__lorenzgillner__toilet-flushing") as AudioClip;
+    }
 
     void Update()
     {
         if (m_active && transform.childCount == 0)
         {
+            // Level is clear
             StartCoroutine("RotateTrapdoorsCoroutine");
+            GlobalFXController.instance.PlayGlobalAudioClip(m_flushSound);
             m_active = false;
         }
     }
