@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
     private AudioClip m_playerHitSound;
     private AudioClip m_playerLevelUpSound;
     private AudioClip m_playerDeathSound;
+    private PlayerCharacterChange m_characterChange;
 
     void Start()
     {
@@ -28,15 +29,14 @@ public class PlayerHealth : MonoBehaviour
         m_playerHitSound = Resources.Load("Audio/FX/hit/playerhit") as AudioClip;
         m_playerLevelUpSound = Resources.Load("Audio/FX/levelUp/141695__copyc4t__levelup") as AudioClip;
         m_playerDeathSound = Resources.Load("Audio/FX/gameOver/415096__wolderado__game-over") as AudioClip;
+        m_characterChange = GetComponent<PlayerCharacterChange>();
     }
 
 	private void Update()
 	{
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            ChangeHp(-5);
-        }
-    }
+        /*if (Input.GetKeyDown(KeyCode.L))
+            LevelUP();*/
+	}
 
 	public void ChangeHp(int byAmount)
 	{
@@ -77,6 +77,8 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
         playerInput.LevelUp();
+        m_characterChange.ChangeSking(playerInput.PlayerLevel);
+
         m_audioSource.PlayOneShot(m_playerLevelUpSound);
         ResetHP();
         levelUpEvent(playerInput.PlayerLevel);

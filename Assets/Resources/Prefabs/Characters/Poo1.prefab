@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 8377568943863496647}
   - component: {fileID: 2750820826785152576}
   - component: {fileID: 1339943913}
+  - component: {fileID: 2723691116327082681}
   m_Layer: 7
   m_Name: Poo1
   m_TagString: Player
@@ -504,6 +505,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2723691116327082681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4036685897639336120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4fd1ebf799305428827a2b23224408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSkins:
+  - {fileID: 21300000, guid: 125bf20fdc8f00f4a92ba3dfaa7250bb, type: 3}
+  - {fileID: 21300000, guid: 2c7561983ec077047b9879f879399ac5, type: 3}
+  - {fileID: 21300000, guid: 669dcccd218319f4dbe4fe0105e97ca9, type: 3}
+  playerLeftEye:
+  - {fileID: 21300000, guid: 634fb79f2c1810e4c962857684ba848a, type: 3}
+  - {fileID: 21300000, guid: 4a269cca100b50b48af2621707edc6ef, type: 3}
+  - {fileID: 21300000, guid: d8d3d14a08698ec4caaa8903831845dd, type: 3}
+  playerRightEye:
+  - {fileID: 21300000, guid: e583245be0f14ac4eb05dac5216cbc91, type: 3}
+  - {fileID: 21300000, guid: 2f3f6e26a46d53d4baa585cc9946517d, type: 3}
+  - {fileID: 21300000, guid: 14ee66bda29914640abd87e7a9204c49, type: 3}
+  playerAnimators:
+  - {fileID: 9100000, guid: eaf8b1bb79f714a4d9dbf7f90d5be7e4, type: 2}
+  - {fileID: 9100000, guid: 84d432a4fb8b52340ae69f112ddf0d48, type: 2}
+  - {fileID: 9100000, guid: ac723e206cafc1146930ddccb8940bd5, type: 2}
+  leftEyeRend: {fileID: 2056023408037971758}
+  rightEyeRend: {fileID: 3533255050119210846}
 --- !u!1 &5418462938777287458
 GameObject:
   m_ObjectHideFlags: 0
