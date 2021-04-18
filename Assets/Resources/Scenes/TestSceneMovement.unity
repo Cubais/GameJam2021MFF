@@ -1776,14 +1776,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 414040305904905244, guid: f07ff04a6e89f124fbb35dbe61918094, type: 3}
-      propertyPath: m_Points.Array.data[14].x
-      value: 0.3517614
-      objectReference: {fileID: 0}
-    - target: {fileID: 414040305904905244, guid: f07ff04a6e89f124fbb35dbe61918094, type: 3}
-      propertyPath: m_Points.Array.data[14].y
-      value: -0.22889543
-      objectReference: {fileID: 0}
     - target: {fileID: 747774275600798113, guid: f07ff04a6e89f124fbb35dbe61918094, type: 3}
       propertyPath: LostParticles
       value: 
@@ -1831,10 +1823,6 @@ PrefabInstance:
     - target: {fileID: 1816303917754224106, guid: f07ff04a6e89f124fbb35dbe61918094, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2207919637148618211, guid: f07ff04a6e89f124fbb35dbe61918094, type: 3}
-      propertyPath: m_Constraints
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3161443308313687779, guid: f07ff04a6e89f124fbb35dbe61918094, type: 3}
       propertyPath: projectilesParent

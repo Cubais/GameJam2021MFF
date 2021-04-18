@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5279442545465067313
 Transform:
   m_ObjectHideFlags: 0
@@ -328,8 +328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd283536f6e12741b4849dc6d3c25a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupPrefab: {fileID: 2541749634838626747, guid: 9c4f52dafaebd8e4fbba63c354db574a, type: 3}
-  pickupParent: {fileID: 0}
 --- !u!114 &8912382043190541368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,7 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceMultiplier: 700
-  level2ForceMultiplier: 0
+  level2ForceMultiplier: 1000
   projectilePrefab: {fileID: 2778898360772688946, guid: e33b7b903681b4c4ea3030bfdebdf994, type: 3}
   projectilesParent: {fileID: 0}
   projectilePosition: {fileID: 7969394431844896961}
