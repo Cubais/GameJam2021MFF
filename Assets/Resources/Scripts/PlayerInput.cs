@@ -30,8 +30,6 @@ public class PlayerInput : MonoBehaviour
         var vertical = Input.GetAxisRaw("Vertical");
         var horizontal = Input.GetAxisRaw("Horizontal");
 
-        HandleAnimations(horizontal, vertical);
-
         // Cannot go Up if not in the water
         if (!m_entity.InWater())
         {
@@ -100,23 +98,4 @@ public class PlayerInput : MonoBehaviour
 	{
         GUI.Label(new Rect(Screen.width - 150, 0, 150, 50), "LEVEL " + PlayerLevel.ToString());
 	}
-
-    private void HandleAnimations(float horizontal, float vertical)
-	{
-        if (!m_animator)
-            return;
-
-        var hor = horizontal;
-        if (horizontal == 0f)
-		{
-            hor = (m_leftSideOrientation) ? -0.1f : 0.1f;
-		}
-        else
-		{
-            m_leftSideOrientation = horizontal < 0;
-		}
-
-        m_animator.SetFloat("Vertical", vertical);
-        m_animator.SetFloat("Horizontal", hor);
-    }
 }

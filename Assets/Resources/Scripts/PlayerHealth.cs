@@ -81,6 +81,8 @@ public class PlayerHealth : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
+        Debug.Log("COL " + collision.gameObject.tag);
+
         if (collision.gameObject.CompareTag("MeleeEnemy"))
 		{
             ChangeHp(-DamageSettings.MeleeDamage);
@@ -89,6 +91,8 @@ public class PlayerHealth : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+        Debug.Log("Trig " + collision.gameObject.tag);
+
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             ChangeHp(-DamageSettings.BrushRangeDamage);

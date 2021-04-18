@@ -10,6 +10,8 @@ public class EntityMovement : MonoBehaviour
     private LevelInfo m_level;
     private Rigidbody2D m_rigidbody;
     private WaterFloating m_waterFloating;
+    private Animator m_animator;
+    private bool m_leftSideOrientation = true;
 
     private Vector3 m_moveDirection = Vector3.zero;
 
@@ -21,6 +23,7 @@ public class EntityMovement : MonoBehaviour
         m_level = LevelInfo.instance;
         m_rigidbody = GetComponent<Rigidbody2D>();
         m_waterFloating = GetComponent<WaterFloating>();
+        m_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -33,6 +36,7 @@ public class EntityMovement : MonoBehaviour
 		}
 
         SetInWater();
+        HandleAnimations(m_moveDirection.x, m_moveDirection.y);
     }
 
 	private void FixedUpdate()
@@ -57,5 +61,24 @@ public class EntityMovement : MonoBehaviour
     private void SetInWater()
 	{
         m_inWater = m_level.IsAtWaterTile(transform.position);
+    }
+
+    private void HandleAnimations(float horizontal, float vertical)
+    {
+        if (!m_animator)
+            return;
+
+        var hor = horizontal;
+        if (horizontal == 0f)
+        {
+            hor = (m_leftSideOrientation) ? -0.1f : 0.1f;
+        }
+        else
+        {
+            m_leftSideOrientation = horizontal < 0;
+        }
+
+        m_animator.SetFloat("Vertical", vertical);
+        m_animator.SetFloat("Horizontal", hor);
     }
 }
